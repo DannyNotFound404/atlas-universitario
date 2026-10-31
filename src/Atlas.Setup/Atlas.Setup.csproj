@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <AssemblyName>ATLAS.Setup</AssemblyName>
+    <RootNamespace>Atlas.Setup</RootNamespace>
+    <VersionPrefix>0.6.1</VersionPrefix>
+    <VersionSuffix>u.2</VersionSuffix>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>..\Atlas.Desktop\Assets\atlas-mineral.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  <ItemGroup
+    Condition="'$(AtlasEnvironmentFile)' != '' and
+               '$(AtlasRootCertificateFile)' != '' and
+               '$(AtlasReleasePublicKeyFile)' != ''">
+    <EmbeddedResource
+      Include="..\Miguel.Server\Distribution\Install-ATLAS.ps1"
+      LogicalName="Atlas.Setup.Install-ATLAS.ps1" />
+    <EmbeddedResource
+      Include="$(AtlasEnvironmentFile)"
+      LogicalName="Atlas.Setup.atlas-environment.json" />
+    <EmbeddedResource
+      Include="$(AtlasRootCertificateFile)"
+      LogicalName="Atlas.Setup.atlas-root-ca.crt" />
+    <EmbeddedResource
+      Include="$(AtlasReleasePublicKeyFile)"
+      LogicalName="Atlas.Setup.atlas-release-signing.public.pem" />
+  </ItemGroup>
+  <Target Name="ValidateAtlasSetupEnvironment" BeforeTargets="PrepareForBuild">
+    <Error
+      Condition="'$(AtlasEnvironmentFile)' == ''"
+      Text="AtlasEnvironmentFile es obligatorio para compilar ATLAS Setup." />
+    <Error
+      Condition="'$(AtlasRootCertificateFile)' == ''"
+      Text="AtlasRootCertificateFile es obligatorio para compilar ATLAS Setup." />
+    <Error
+      Condition="'$(AtlasReleasePublicKeyFile)' == ''"
+      Text="AtlasReleasePublicKeyFile es obligatorio para compilar ATLAS Setup." />
+    <Error
+      Condition="!Exists('$(AtlasEnvironmentFile)')"
+      Text="No existe AtlasEnvironmentFile: $(AtlasEnvironmentFile)" />
+    <Error
+      Condition="!Exists('$(AtlasRootCertificateFile)')"
+      Text="No existe AtlasRootCertificateFile: $(AtlasRootCertificateFile)" />
+    <Error
+      Condition="!Exists('$(AtlasReleasePublicKeyFile)')"
+      Text="No existe AtlasReleasePublicKeyFile: $(AtlasReleasePublicKeyFile)" />
+  </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Desktop\Atlas.Desktop.csproj" />
+  </ItemGroup>
+</Project>

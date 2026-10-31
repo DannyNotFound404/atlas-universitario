@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>Miguel.Server</AssemblyName>
+    <UseAppHost>false</UseAppHost>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+    <VersionPrefix>0.9.50</VersionPrefix>
+    <VersionSuffix>u.2</VersionSuffix>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql" />
+    <ProjectReference Include="..\Miguel.Contracts\Miguel.Contracts.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\database\*.sql"
+                      Link="Database\Migrations\%(Filename)%(Extension)" />
+    <Content Include="Web\*.html"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="Distribution\*.ps1"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
+    <Content Update="Distribution\server-release-catalog.json"
+             TargetPath="server-release-catalog.json"
+             CopyToOutputDirectory="PreserveNewest"
+             CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

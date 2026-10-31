@@ -1,0 +1,53 @@
+#view-network .network-heading { align-items:center; margin-bottom:18px; }
+#view-network .network-heading h2 { font-size:1.65rem; margin:5px 0; }
+#view-network .network-engine-panel { padding:14px 18px; margin-bottom:14px; }
+.network-scanner-controls { margin-bottom:18px; padding:20px; }
+#networkScanForm { display:grid; grid-template-columns:minmax(210px,2fr) minmax(130px,1fr) minmax(130px,1fr) auto auto; gap:12px; align-items:end; }
+#networkScanForm .field { margin:0; min-width:0; }
+#networkScanForm input,#networkScanForm select { width:100%; }
+.network-scanner-progress { display:flex; align-items:center; flex-wrap:wrap; gap:14px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); font-size:.875rem; }
+.scanner-progress-meta { display:grid; gap:4px; flex:1; min-width:200px; }
+.scanner-progress-meta span,.scanner-progress-meta small { color:var(--muted); }
+.network-scanner-progress progress { width:170px; height:8px; accent-color:var(--accent); }
+.scanner-view-switch { display:flex; gap:4px; padding:4px; border:1px solid var(--line); border-radius:10px; }
+.scanner-view-switch button { border:0; border-radius:7px; background:transparent; color:var(--muted); padding:8px 12px; font:inherit; font-weight:650; cursor:pointer; }
+.scanner-view-switch button[aria-pressed=true] { color:var(--ink); background:var(--surface-soft); box-shadow:inset 0 0 0 1px var(--line); }
+#view-network .network-assets-heading { padding:18px 20px; }
+#view-network .network-assets-table { min-width:1100px; width:100%; table-layout:fixed; font-size:.82rem; }
+#view-network .network-assets-table th:nth-child(1) { width:9%; }
+#view-network .network-assets-table th:nth-child(2) { width:12%; }
+#view-network .network-assets-table th:nth-child(3) { width:15%; }
+#view-network .network-assets-table th:nth-child(4) { width:16%; }
+#view-network .network-assets-table th:nth-child(5) { width:12%; }
+#view-network .network-assets-table th:nth-child(6) { width:7%; }
+#view-network .network-assets-table th:nth-child(7) { width:12%; }
+#view-network .network-assets-table th:nth-child(8) { width:8%; }
+#view-network .network-assets-table th:nth-child(9) { width:9%; }
+#view-network .network-assets-table td { padding:12px 10px; vertical-align:middle; max-width:210px; overflow-wrap:anywhere; }
+#view-network .network-assets-table th { padding:10px; }
+#view-network .network-assets-table th button { background:transparent; border:0; padding:0; color:inherit; font:inherit; text-transform:inherit; cursor:pointer; }
+#view-network .network-assets-table th[aria-sort=ascending] button::after { content:" ↑"; }
+#view-network .network-assets-table th[aria-sort=descending] button::after { content:" ↓"; }
+#view-network .network-assets-table .cell-secondary { margin-top:4px; font-size:.73rem; line-height:1.4; }
+.scanner-ip strong,.scanner-mac { font-family:ui-monospace,Consolas,monospace; white-space:nowrap; }
+.scanner-mac small { font-family:inherit; white-space:normal; }
+.scanner-state { display:inline-flex; gap:6px; align-items:center; white-space:nowrap; font-weight:650; }
+.scanner-state i { width:7px; height:7px; border-radius:50%; background:currentColor; }
+.scanner-state.responded { color:var(--accent); }
+.scanner-state.previous { color:var(--muted); }
+.scanner-latency { font-variant-numeric:tabular-nums; white-space:nowrap; }
+#view-network .scanner-copy { display:block; margin-top:5px; }
+.network-administration { margin-top:18px; overflow:hidden; }
+.network-administration>summary { padding:18px 20px; color:var(--ink); font-weight:700; cursor:pointer; }
+.network-administration .network-scope-grid { padding:0 18px 18px; margin:0; }
+.network-administration .network-scope-card { gap:8px; padding:16px; }
+.network-administration .network-scope-card small { display:block; color:var(--muted); }
+.scanner-device-facts { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:0 0 18px; }
+.scanner-device-facts>div { border:1px solid var(--line); border-radius:10px; padding:14px; min-width:0; }
+.scanner-device-facts dt { color:var(--muted); font-size:.8rem; margin-bottom:6px; }
+.scanner-device-facts dd { margin:0; font-weight:650; overflow-wrap:anywhere; }
+.scanner-device-facts small { display:block; color:var(--muted); margin-top:5px; font-weight:400; }
+.scanner-classification { display:flex; align-items:end; gap:12px; margin-top:20px; padding-top:18px; border-top:1px solid var(--line); }
+.scanner-classification .field { flex:1; }
+@media(max-width:1200px) { #networkScanForm { grid-template-columns:1fr 1fr; } #networkScanForm>.field:first-child { grid-column:1/-1; } }
+@media(max-width:620px) { .network-scanner-controls { padding:16px; } #networkScanForm { grid-template-columns:1fr 1fr; } #networkScanForm input { min-width:0; } .scanner-view-switch { width:100%; } .scanner-view-switch button { flex:1; padding:9px 5px; } .scanner-device-facts { grid-template-columns:1fr; } .scanner-classification { flex-direction:column; align-items:stretch; } .network-scanner-progress progress { width:100%; } }

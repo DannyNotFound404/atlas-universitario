@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>BackupNAS</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputType>WinExe</OutputType>
+    <ApplicationIcon>..\Atlas.Desktop\Assets\atlas-mineral.ico</ApplicationIcon>
+    <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <NuGetAudit>false</NuGetAudit>
+    <LangVersion>12.0</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="config.example.txt" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Desktop\Atlas.Desktop.csproj" />
+    <Compile Include="..\Miguel.Contracts\BackupTelemetry.cs" Link="Telemetry\BackupTelemetry.cs" />
+    <Compile Include="..\Miguel.Contracts\BackupRunReport.cs" Link="Telemetry\BackupRunReport.cs" />
+  </ItemGroup>
+</Project>

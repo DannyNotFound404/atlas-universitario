@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Atlas.Desktop/Atlas.Desktop.csproj" />
+    <Project Path="src/Atlas.Nas.Provisioner/Atlas.Nas.Provisioner.csproj" />
+    <Project Path="src/Atlas.Publisher/Atlas.Publisher.csproj" />
+    <Project Path="src/Atlas.Release.Tool/Atlas.Release.Tool.csproj" />
+    <Project Path="src/Atlas.Setup/Atlas.Setup.csproj" />
+    <Project Path="src/Atlas.Updater/Atlas.Updater.csproj" />
+    <Project Path="src/BackupNAS/BackupNAS.csproj" />
+    <Project Path="src/Miguel.Agent/Miguel.Agent.csproj" />
+    <Project Path="src/Miguel.Contracts/Miguel.Contracts.csproj" />
+    <Project Path="src/Miguel.Server/Miguel.Server.csproj" />
+  </Folder>
+</Solution>

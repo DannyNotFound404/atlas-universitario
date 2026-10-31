@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Para citar esta entrega, conserve el nombre del autor, el título y la versión. La cita no concede permisos adicionales a LICENSE.md."
+type: software
+title: "ATLAS Universitario"
+version: "2026.10.29-source.1"
+date-released: 2026-10-29
+authors:
+  - family-names: "Orellana Osorio"
+    given-names: "Danny Josué"

@@ -1,0 +1,256 @@
+/* Login companion to the Mineral Motion portal. Authentication stays in login.js. */
+body.mineral-motion-login {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  margin: 0;
+  padding: clamp(18px, 4vw, 52px);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse at 16% 20%, color-mix(in srgb, var(--accent) 5%, transparent), transparent 48%),
+    radial-gradient(ellipse at 92% 90%, color-mix(in srgb, var(--accent-secondary) 5%, transparent), transparent 40%),
+    var(--canvas);
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mineral-motion-login .login-shell {
+  display: grid;
+  grid-template-columns: 1fr 1.04fr;
+  align-items: stretch;
+  gap: 8px;
+  width: min(1080px, 100%);
+  min-width: 0;
+  min-height: 630px;
+  padding: 8px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 27px;
+  color: var(--ink);
+  background: var(--surface);
+  box-shadow: 0 22px 75px rgb(var(--shadow-rgb) / .10);
+}
+
+.mineral-motion-login .login-brand {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+  min-width: 0;
+  min-height: 612px;
+  padding: 34px;
+  overflow: hidden;
+  border-radius: 20px;
+  color: var(--motion-hero-ink);
+  background: var(--motion-hero);
+}
+
+.mineral-motion-login .login-brand::after {
+  position: absolute;
+  z-index: -1;
+  inset-block-start: auto;
+  inset-block-end: -165px;
+  inset-inline-start: auto;
+  inset-inline-end: -105px;
+  width: 370px;
+  height: 370px;
+  border: 1px solid color-mix(in srgb, currentColor 9%, transparent);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 35px color-mix(in srgb, currentColor 3%, transparent), 0 0 0 70px color-mix(in srgb, currentColor 2%, transparent);
+  opacity: 1;
+  pointer-events: none;
+  content: "";
+}
+
+.mineral-motion-login .login-brand-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; min-width: 0; }
+.mineral-motion-login .login-brand .brand-seal { flex: 0 0 auto; width: 34px; height: 39px; margin: 0; color: inherit; }
+.mineral-motion-login .login-brand .brand-seal svg { display: block; width: 100%; height: 100%; stroke-width: 2; }
+.mineral-motion-login .login-brand-word { display: block; color: inherit; font-size: 11px; font-weight: 600; line-height: 1.45; letter-spacing: .10em; text-transform: uppercase; }
+.mineral-motion-login .login-brand-top small { display: block; margin-block-start: 3px; color: inherit; font-size: 10px; line-height: 1.4; opacity: .78; }
+.mineral-motion-login .login-brand-copy { position: relative; z-index: 1; width: 100%; min-width: 0; margin-block-start: auto; }
+.mineral-motion-login .login-brand .eyebrow { margin: 0 0 12px; color: inherit; font-size: 10px; font-weight: 600; letter-spacing: .13em; opacity: .82; }
+.mineral-motion-login .login-brand h1 { max-width: 14ch; margin: 0; color: inherit; font-size: clamp(29px, 3vw, 37px); font-weight: 600; line-height: 1.17; letter-spacing: -.045em; text-wrap: balance; }
+.mineral-motion-login .login-brand-copy > p:not(.eyebrow), .mineral-motion-login .login-brand > p:not(.eyebrow) { max-width: 40ch; margin: 16px 0 0; color: inherit; font-size: 13px; line-height: 1.8; opacity: .87; }
+.mineral-motion-login .security-note { position: relative; z-index: 1; display: flex; align-items: center; gap: 9px; max-width: 100%; margin-block-start: 21px; padding: 12px 0 0; border: 0; border-block-start: 1px solid color-mix(in srgb, currentColor 16%, transparent); border-radius: 0; color: inherit; background: transparent; }
+.mineral-motion-login .security-note strong { color: inherit; font-size: 11px; font-weight: 600; }
+.mineral-motion-login .security-note small { margin-block-start: 3px; color: inherit; font-size: 10px; opacity: .8; }
+.mineral-motion-login .security-note .security-dot { width: 6px; height: 6px; color: inherit; background: currentColor; box-shadow: none; opacity: .7; }
+.mineral-motion-login .login-note-icon { display: grid; flex: 0 0 29px; place-items: center; width: 29px; height: 32px; border-radius: 9px; color: inherit; background: color-mix(in srgb, currentColor 6%, transparent); }
+.mineral-motion-login .login-note-icon svg { display: block; width: 16px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Local vector decoration: no metrics, status claims or interactive controls. */
+.mineral-motion-login .login-orbit {
+  position: relative;
+  isolation: isolate;
+  flex: 0 0 230px;
+  align-self: center;
+  width: min(100%, 360px);
+  height: 230px;
+  margin: -6px 0 -4px;
+  color: inherit;
+  pointer-events: none;
+  user-select: none;
+}
+
+.mineral-motion-login .login-orbit-grid { position: absolute; z-index: -1; inset: -25px -20px; background-image: linear-gradient(color-mix(in srgb, currentColor 8%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in srgb, currentColor 8%, transparent) 1px, transparent 1px); background-size: 22px 22px; mask-image: radial-gradient(ellipse at center, #000 10%, transparent 70%); }
+.mineral-motion-login .login-orbit-ring { position: absolute; inset-block-start: 50%; inset-inline-start: 50%; width: 210px; height: 210px; margin: -105px 0 0 -105px; border: 1px solid color-mix(in srgb, currentColor 16%, transparent); border-radius: 50%; transform: rotate(-20deg); animation: login-orbit-rotate 44s linear infinite; }
+.mineral-motion-login .login-orbit-ring::before { position: absolute; inset-block-start: 12px; inset-inline-start: 43px; width: 5px; height: 5px; border-radius: 50%; background: currentColor; opacity: .45; content: ""; }
+.mineral-motion-login .login-orbit-ring.secondary { width: 148px; height: 148px; margin: -74px 0 0 -74px; border-style: dashed; border-color: color-mix(in srgb, currentColor 12%, transparent); animation-direction: reverse; animation-duration: 60s; }
+.mineral-motion-login .login-orbit-ring.secondary::before { width: 4px; height: 4px; inset-block-start: 6px; inset-inline-start: 29px; opacity: .35; }
+.mineral-motion-login .login-orbit-core { position: absolute; inset-block-start: 50%; inset-inline-start: 50%; display: grid; place-items: center; width: 76px; height: 84px; margin: -42px 0 0 -38px; padding: 16px; border: 1px solid color-mix(in srgb, currentColor 14%, transparent); border-radius: 23px; color: inherit; background: color-mix(in srgb, var(--motion-hero) 82%, var(--surface)); box-shadow: 0 12px 30px rgb(var(--shadow-rgb) / .08); }
+.mineral-motion-login .login-orbit-core svg { display: block; width: 43px; height: 49px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mineral-motion-login .login-orbit-node { position: absolute; display: grid; place-items: center; width: 45px; height: 45px; padding: 11px; border: 1px solid color-mix(in srgb, currentColor 12%, transparent); border-radius: 14px; color: inherit; background: color-mix(in srgb, var(--motion-hero) 82%, var(--surface)); box-shadow: 0 8px 19px rgb(var(--shadow-rgb) / .05); animation: login-node-float 8s ease-in-out infinite; }
+.mineral-motion-login .login-orbit-node svg { display: block; width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mineral-motion-login .login-orbit-node.node-a { inset-block-start: 31px; inset-inline-start: 16px; animation-delay: -1s; }
+.mineral-motion-login .login-orbit-node.node-b { inset-block-start: 20px; inset-inline-end: 21px; animation-delay: -4s; }
+.mineral-motion-login .login-orbit-node.node-c { inset-block-end: 18px; inset-inline-start: 48px; animation-delay: -6s; }
+.mineral-motion-login .login-orbit-node.node-d { inset-block-end: 11px; inset-inline-end: 41px; animation-delay: -2s; }
+
+.mineral-motion-login .login-card { display: flex; flex-direction: column; justify-content: center; min-width: 0; padding: 31px 42px 35px; border-radius: 20px; color: var(--ink); background: var(--surface); }
+.mineral-motion-login .login-appearance { display: flex; flex: 0 0 auto; justify-content: flex-end; margin: 0 0 33px; }
+.mineral-motion-login .login-appearance .theme-toggle { min-height: 34px; gap: 7px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--surface-soft); font-size: 11px; font-weight: 550; }
+.mineral-motion-login .login-appearance .theme-toggle:hover { border-color: var(--line-strong); color: var(--ink); background: var(--surface-raised); }
+.mineral-motion-login .login-appearance .theme-glyph { width: 16px; height: 16px; }
+.mineral-motion-login .login-heading { margin: 0 0 25px; }
+.mineral-motion-login .login-kicker { color: var(--accent); font-size: 10px; font-weight: 600; letter-spacing: .12em; }
+.mineral-motion-login .login-heading h2 { margin: 9px 0 10px; color: var(--ink); font-size: 31px; font-weight: 650; line-height: 1.2; letter-spacing: -.04em; }
+.mineral-motion-login .login-heading p { max-width: 42ch; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.mineral-motion-login #loginForm { width: 100%; min-width: 0; }
+.mineral-motion-login .field { display: block; min-width: 0; margin: 0 0 20px; }
+.mineral-motion-login .field > span { display: block; margin: 0 0 8px; color: var(--ink); font-size: 13px; font-weight: 550; }
+.mineral-motion-login .field input { width: 100%; min-width: 0; height: 50px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 11px; color: var(--ink); background: var(--surface-soft); font-size: 15px; line-height: 1.4; transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease; }
+.mineral-motion-login .field input:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--line-strong)); }
+.mineral-motion-login .field input:focus { border-color: var(--accent); color: var(--ink); background: var(--surface); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 9%, transparent); }
+.mineral-motion-login .field input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mineral-motion-login .field small { display: block; margin-block-start: 8px; color: var(--muted); font-size: 12px; line-height: 1.6; }
+.mineral-motion-login .password-field { position: relative; min-width: 0; }
+.mineral-motion-login .password-field input { padding-inline-end: 67px; }
+.mineral-motion-login .reveal-button { position: absolute; inset-block-start: 7px; inset-inline-end: 7px; min-width: 43px; height: 36px; padding: 0 10px; border: 0; border-radius: 8px; color: var(--accent); background: var(--accent-soft); font-size: 12px; font-weight: 600; touch-action: manipulation; }
+.mineral-motion-login .reveal-button:hover { color: var(--ink); background: var(--surface-raised); }
+.mineral-motion-login .reveal-button.pressed { color: var(--on-accent); background: var(--accent); }
+.mineral-motion-login #mfaCode { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.mineral-motion-login .login-button { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 50px; height: auto; margin: 5px 0 0; padding: 13px 17px; border: 1px solid var(--accent); border-radius: 11px; color: var(--on-accent); background: var(--accent); box-shadow: none; font-size: 13px; font-weight: 600; line-height: 1.55; text-align: start; transition: background 160ms ease, border-color 160ms ease, transform 180ms ease; }
+.mineral-motion-login .login-button:hover:not(:disabled) { border-color: var(--accent-hover); color: var(--on-accent); background: var(--accent-hover); }
+.mineral-motion-login .login-button .button-arrow { flex: 0 0 18px; width: 18px; height: 18px; }
+.mineral-motion-login .login-button:disabled { cursor: not-allowed; opacity: .65; }
+.mineral-motion-login .login-button.loading { cursor: wait; }
+.mineral-motion-login .login-button.loading .button-arrow { opacity: 0; }
+.mineral-motion-login .login-button.loading::after { position: absolute; inset-block-start: calc(50% - 8px); inset-inline-end: 17px; width: 16px; height: 16px; border: 2px solid color-mix(in srgb, currentColor 35%, transparent); border-block-start-color: currentColor; border-radius: 50%; animation: login-loading 800ms linear infinite; pointer-events: none; content: ""; }
+.mineral-motion-login .form-error, .mineral-motion-login .setup-warning { max-width: 100%; margin: 0 0 19px; padding: 12px 14px; border: 1px solid transparent; border-inline-start-width: 3px; border-radius: 9px; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+.mineral-motion-login .form-error { border-inline-start-color: var(--red); color: var(--red); background: var(--red-soft); }
+.mineral-motion-login .setup-warning { border-inline-start-color: var(--amber); color: var(--amber); background: var(--amber-soft); }
+.mineral-motion-login .login-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 15px; margin-block-start: 27px; padding-block-start: 19px; border-block-start: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.6; }
+.mineral-motion-login .login-footer span::before { margin-inline-end: 5px; color: var(--accent); font-size: 9px; font-weight: 600; }
+.mineral-motion-login :is(button, a):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+@keyframes login-orbit-rotate { to { transform: rotate(340deg); } }
+@keyframes login-node-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes login-loading { to { transform: rotate(360deg); } }
+
+@media (max-width: 1000px) {
+  body.mineral-motion-login { padding: 25px; }
+  .mineral-motion-login .login-shell { grid-template-columns: .98fr 1.02fr; min-height: 600px; }
+  .mineral-motion-login .login-brand { min-height: 582px; padding: 29px; }
+  .mineral-motion-login .login-card { padding: 29px; }
+  .mineral-motion-login .login-brand h1 { font-size: 31px; }
+  .mineral-motion-login .login-orbit { flex-basis: 211px; height: 211px; }
+  .mineral-motion-login .login-orbit-node.node-a { inset-inline-start: 0; }
+  .mineral-motion-login .login-orbit-node.node-b { inset-inline-end: 2px; }
+  .mineral-motion-login .login-orbit-node.node-c { inset-inline-start: 17px; }
+  .mineral-motion-login .login-orbit-node.node-d { inset-inline-end: 12px; }
+}
+
+@media (max-width: 760px) {
+  body.mineral-motion-login { padding: 18px; }
+  .mineral-motion-login .login-shell { grid-template-columns: minmax(0, 1fr); gap: 0; width: min(560px, 100%); min-height: 0; padding: 7px; border-radius: 24px; }
+  .mineral-motion-login .login-brand { display: block; min-height: 0; padding: 26px; border-radius: 18px; }
+  .mineral-motion-login .login-brand-top { margin-block-end: 26px; }
+  .mineral-motion-login .login-brand .brand-seal { width: 28px; height: 33px; }
+  .mineral-motion-login .login-brand-word { font-size: 10px; }
+  .mineral-motion-login .login-brand-copy { max-width: 74%; margin: 0; }
+  .mineral-motion-login .login-brand .eyebrow { margin-block-end: 8px; font-size: 9px; }
+  .mineral-motion-login .login-brand h1 { max-width: 16ch; font-size: 26px; line-height: 1.2; }
+  .mineral-motion-login .login-brand-copy > p:not(.eyebrow) { margin-block-start: 12px; font-size: 12px; line-height: 1.65; }
+  .mineral-motion-login .login-orbit { position: absolute; inset-block-start: 22px; inset-inline-end: -90px; width: 235px; height: 235px; margin: 0; opacity: .22; transform: rotate(-13deg); }
+  .mineral-motion-login .login-orbit-core { width: 65px; height: 73px; margin: -36px 0 0 -32px; }
+  .mineral-motion-login .security-note { max-width: 74%; margin-block-start: 19px; padding-block-start: 11px; }
+  .mineral-motion-login .security-note small { font-size: 10px; }
+  .mineral-motion-login .login-card { padding: 23px 25px 25px; }
+  .mineral-motion-login .login-appearance { margin-block-end: 23px; }
+  .mineral-motion-login .login-heading { margin-block-end: 24px; }
+  .mineral-motion-login .login-heading h2 { font-size: 29px; }
+}
+
+@media (max-width: 430px) {
+  body.mineral-motion-login { padding: 12px; }
+  .mineral-motion-login .login-shell { padding: 6px; border-radius: 21px; }
+  .mineral-motion-login .login-brand { padding: 22px; border-radius: 15px; }
+  .mineral-motion-login .login-brand-top { margin-block-end: 24px; }
+  .mineral-motion-login .login-brand-copy { max-width: 88%; }
+  .mineral-motion-login .login-brand h1 { font-size: 25px; }
+  .mineral-motion-login .login-brand-copy > p:not(.eyebrow) { font-size: 11px; }
+  .mineral-motion-login .login-orbit { inset-block-start: 30px; inset-inline-end: -112px; opacity: .16; }
+  .mineral-motion-login .security-note { max-width: 93%; }
+  .mineral-motion-login .login-card { padding: 20px 18px 23px; }
+  .mineral-motion-login .login-appearance .theme-toggle { font-size: 10px; }
+  .mineral-motion-login .login-appearance { margin-block-end: 19px; }
+  .mineral-motion-login .login-heading h2 { font-size: 28px; }
+  .mineral-motion-login .login-heading p { font-size: 12px; }
+  .mineral-motion-login .field input { font-size: 16px; }
+  .mineral-motion-login .login-footer { gap: 7px 11px; margin-block-start: 23px; font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mineral-motion-login *, .mineral-motion-login *::before, .mineral-motion-login *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+:root[data-motion="off"] .mineral-motion-login *,
+:root[data-motion="off"] .mineral-motion-login *::before,
+:root[data-motion="off"] .mineral-motion-login *::after { animation: none !important; transition: none !important; }
+
+@media (forced-colors: active) {
+  .mineral-motion-login .login-brand { border: 1px solid CanvasText; color: CanvasText; background: Canvas; }
+  .mineral-motion-login .login-shell, .mineral-motion-login .field input { border-color: CanvasText; }
+  .mineral-motion-login .login-orbit, .mineral-motion-login .login-brand::after { display: none; }
+  .mineral-motion-login .form-error, .mineral-motion-login .setup-warning { border-color: CanvasText; }
+}
+
+@media print {
+  body.mineral-motion-login {
+    --canvas: #ffffff;
+    --surface: #ffffff;
+    --surface-soft: #f0f5ee;
+    --surface-raised: #dfe9df;
+    --ink: #203c31;
+    --muted: #506858;
+    --line: #cbdacf;
+    --line-strong: #a6b9ac;
+    --accent: #216640;
+    --accent-hover: #194e31;
+    --accent-soft: #e5efdb;
+    --on-accent: #ffffff;
+    --green: #216640;
+    --green-soft: #e4efdc;
+    --amber: #89561d;
+    --amber-soft: #faf0dc;
+    --red: #a43c4b;
+    --red-soft: #fbecef;
+    color-scheme: light;
+    display: block;
+    min-height: 0;
+    padding: 0;
+    color: var(--ink);
+    background: var(--canvas);
+  }
+  .mineral-motion-login .login-shell { width: 100%; min-height: 0; border: 0; box-shadow: none; }
+  .mineral-motion-login .login-brand { min-height: 0; color: var(--ink); background: var(--surface); }
+  .mineral-motion-login .login-orbit, .mineral-motion-login .login-brand::after, .mineral-motion-login .login-appearance { display: none !important; }
+  .mineral-motion-login .login-card { padding: 25px; }
+}

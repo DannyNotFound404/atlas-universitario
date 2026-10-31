@@ -1,0 +1,42 @@
+/* ATLAS 0.9.41 · shared operational semantics, Mineral tokens unchanged. */
+.real-data-banner { display: none; }
+.horizontal-chart-track > span { min-width: 0; }
+.coverage-badge.cancelled { background: var(--surface-soft); color: var(--warning, #b88b37); }
+.chart-scope { margin: 0; padding: 0 20px 20px; color: var(--muted); font-size: .85rem; line-height: 1.6; }
+.operational-attention { margin-block: 20px; }
+.attention-filters { display: flex; gap: 16px; padding: 0 20px 20px; flex-wrap: wrap; }
+.attention-filters label { display: grid; gap: 7px; flex: 1 1 220px; font-size: .85rem; color: var(--muted); }
+.attention-filters input, .attention-filters select { width: 100%; min-height: 42px; padding: 9px 12px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+.attention-groups { display: grid; gap: 10px; padding: 0 20px 20px; }
+.attention-group { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--surface-soft); }
+.attention-group summary { display: flex; align-items: center; gap: 16px; justify-content: space-between; cursor: pointer; padding: 16px; border-inline-start: 4px solid var(--warning, #b88b37); }
+.attention-group.critical summary { border-inline-start-color: var(--danger, #bd5454); }
+.attention-group summary small, .attention-group li small { display: block; color: var(--muted); margin-top: 5px; line-height: 1.5; }
+.attention-group summary b { padding: 6px 12px; border-radius: 10px; background: var(--surface); }
+.attention-group summary b::after { content: " +"; font-weight: 400; }
+.attention-group[open] summary b::after { content: " −"; }
+.attention-next { padding: 0 16px; line-height: 1.5; }
+.attention-group ul { margin: 0; padding: 0; list-style: none; }
+.attention-group li { display: flex; justify-content: space-between; align-items: center; padding: 16px; gap: 20px; border-top: 1px solid var(--line); }
+.attention-group li > div { min-width: 0; overflow-wrap: anywhere; }
+.attention-group li p { margin: 8px 0; line-height: 1.5; }
+.attention-group li button { flex-shrink: 0; }
+.attention-empty { padding: 0 16px; color: var(--muted); }
+.asset-detail-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 20px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-soft); }
+.asset-detail-tabs button { flex: 1 1 auto; border: none; padding: 10px; border-radius: 8px; font: inherit; font-size: .85rem; background: transparent; color: var(--ink); cursor: pointer; }
+.asset-detail-tabs button[aria-pressed=true] { background: var(--surface); box-shadow: 0 1px 4px #0002; font-weight: 700; }
+[data-asset-panel][hidden] { display: none !important; }
+.asset-related-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-block: 16px; }
+.asset-related-actions[hidden] { display: none; }
+.attention-group ul { max-height: 480px; overflow-y: auto; }
+.reference-notice { padding: 18px; margin-bottom: 18px; border: 1px solid var(--line); border-inline-start: 4px solid var(--warning, #b88b37); border-radius: 10px; background: var(--surface-soft); color: var(--ink); }
+.reference-notice p { line-height: 1.6; margin: 8px 0 0; }
+#backupControlDetailPanel, #backupControlFormPanel, #backupObservationPanel, #backupRestorationPanel, #backupEvidencePanel, #governanceDetailPanel, #caseDetailPanel { scroll-margin-top: 150px; }
+.backup-result-note { border-inline-start: 4px solid var(--line); }
+.backup-result-note[data-result=FAILED] { border-inline-start-color: var(--danger, #bd5454); background: var(--surface-soft); }
+.backup-result-note[data-result=CANCELLED], .backup-result-note[data-result=WARNING], .backup-result-note[data-result=UNKNOWN] { border-inline-start-color: var(--warning, #b88b37); background: var(--surface-soft); }
+@media(max-width:700px) {
+  .attention-group li { flex-direction: column; align-items: stretch; }
+  .operational-attention .panel-heading { flex-wrap: wrap; gap: 12px; }
+  .attention-groups, .attention-filters { padding-inline: 12px; }
+}

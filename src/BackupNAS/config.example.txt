@@ -1,0 +1,19 @@
+# Configuración de ejemplo de ATLAS Universidad Backup 5.13.0-u.2
+# Copie este archivo como config.txt junto al ejecutable y edite los valores.
+
+NAS_IP=192.0.2.10
+# Debe coincidir con el nombre que aparece al abrir \\servidor en Windows.
+NAS_SHARE=Nombre Apellido
+
+# Valores predeterminados de seguridad:
+# - No copia archivos con atributos Oculto o Sistema.
+# - No copia bloqueos de Office (~$*) ni temporales comunes.
+EXCLUIR_OCULTOS=true
+EXCLUIR_TEMPORALES=true
+
+CARPETA1=Documents
+CARPETA2=Desktop
+
+# Ejemplos opcionales:
+#CARPETA3=Pictures
+#CARPETA4=Downloads

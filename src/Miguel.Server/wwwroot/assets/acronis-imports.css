@@ -1,0 +1,17 @@
+.acronis-intro { display:flex; align-items:flex-start; gap:1.5rem; padding:1.4rem; margin-bottom:1rem; background:var(--surface-soft); border:1px solid var(--line); border-radius:18px; }
+.acronis-intro > div:first-child { flex:1; min-width:0; }
+.acronis-intro h3 { margin:.4rem 0 .8rem; color:var(--ink); }
+.acronis-intro p,.acronis-report-heading p { color:var(--muted); line-height:1.6; }
+.acronis-intro .bw-card-actions { flex-wrap:wrap; }
+.acronis-report-heading h4 { font-size:1.2rem; color:var(--ink); overflow-wrap:anywhere; }
+.acronis-report-heading details,.acronis-missing { margin:1rem 0; padding:1rem; border:1px solid var(--line); border-radius:12px; }
+.acronis-hash { font-family:monospace; overflow-wrap:anywhere; }
+.bw-dialog.acronis-dialog { width:min(1360px,calc(100vw - 40px)); }
+.acronis-comparison table { min-width:1050px; }
+.acronis-comparison td { vertical-align:top; max-width:330px; }
+.acronis-comparison td small { display:block; margin-top:.35rem; }
+.acronis-comparison td p { margin:.5rem 0; font-size:.9rem; line-height:1.5; white-space:normal; overflow-wrap:anywhere; }
+.acronis-comparison td details p { white-space:pre-line; }
+.acronis-missing ul { display:grid; gap:.5rem; padding-left:1.3rem; }
+.acronis-run-note { padding:.7rem; border-left:3px solid var(--accent); background:var(--surface-soft); border-radius:6px; }
+@media(max-width:700px) { .acronis-intro { flex-direction:column; padding:1rem; } .acronis-report-heading h4 { font-size:1rem; } }

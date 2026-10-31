@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>ATLAS.Release.Tool</AssemblyName>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionSuffix>u.1</VersionSuffix>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="../Miguel.Contracts/Miguel.Contracts.csproj" /></ItemGroup>
+  <ItemGroup>
+    <Compile Include="../Atlas.Publisher/ReleaseBuilder.cs" Link="ReleaseBuilder.cs" />
+    <Compile Include="../Atlas.Updater/VersionTagComparer.cs" Link="VersionTagComparer.cs" />
+  </ItemGroup>
+</Project>

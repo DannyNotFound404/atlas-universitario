@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <Authors>Danny Josué Orellana Osorio</Authors>
+    <Copyright>Copyright (c) 2026 Danny Josué Orellana Osorio. Consulte LICENSE.md y THIRD-PARTY-NOTICES.md.</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionSuffix>pilot.2</VersionSuffix>
+  </PropertyGroup>
+</Project>

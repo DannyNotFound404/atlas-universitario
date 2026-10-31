@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "name": "ATLAS Universitario",
+  "deliveryVersion": "2026.10.29-source.1",
+  "baseServerVersion": "0.9.50-u.2",
+  "authorDeclared": "Danny Josué Orellana Osorio",
+  "license": "Consulta y evaluación; otros usos requieren autorización",
+  "theme": "Grafito Acero claro y oscuro",
+  "migrationCount": 44,
+  "productionIncluded": false,
+  "existingUniversityTrustIncluded": false,
+  "binariesIncluded": false
+}

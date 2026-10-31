@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "currentReleaseVersion": "0.9.50-u.2",
+  "releases": [
+    {
+      "releaseVersion": "0.9.43-rc.2",
+      "releasedAtUtc": "2026-10-02T00:00:00+00:00",
+      "previousReleaseVersion": null,
+      "summary": "Base histórica de la VM universitaria; conserva su historial real en la base existente.",
+      "features": [
+        "Portal académico previo."
+      ],
+      "changesFromPrevious": [
+        "Referencia local de compatibilidad; no demuestra instalación actual."
+      ],
+      "applicationRestoreOutcome": "Requiere la aplicación anterior conservada al actualizar.",
+      "fullRestoreOutcome": "Requiere el respaldo y la instantánea de la VM universitaria."
+    },
+    {
+      "releaseVersion": "0.9.50-u.1",
+      "releasedAtUtc": "2026-10-22T17:24:15.561Z",
+      "previousReleaseVersion": "0.9.43-rc.2",
+      "summary": "Edición universitaria basada en ATLAS Server 0.9.50-rc.2, con Coral claro y oscuro.",
+      "features": [
+        "Los quince módulos actuales del portal y 44 migraciones.",
+        "Presencia en icono, IPv4 y datos de inventario con fechas diferenciadas.",
+        "Control de copias, calendarios, Acronis, auditoría y reportes actuales."
+      ],
+      "changesFromPrevious": [
+        "Actualiza la aplicación académica y migra únicamente estructuras pendientes.",
+        "Conserva datos, cuentas, certificados y autoridad de firma propios de la U.",
+        "Motor de copia estable 5.13; no incluye la candidata experimental 5.14."
+      ],
+      "applicationRestoreOutcome": "Recupera la aplicación, configuración y distribución anteriores de la U; conserva las migraciones aditivas y los datos.",
+      "fullRestoreOutcome": "Recupera la instantánea o el respaldo coherente de aplicación, PostgreSQL, configuración y evidencias de la VM académica."
+    },
+    {
+      "releaseVersion": "0.9.50-u.2",
+      "releasedAtUtc": "2026-10-22T18:32:39.800Z",
+      "previousReleaseVersion": "0.9.50-u.1",
+      "summary": "Paleta Grafito Acero clara y oscura para ATLAS Universidad.",
+      "features": [
+        "Marca azul acero y cian moderado con fondos grafito.",
+        "La misma paleta en el acceso, el portal y las aplicaciones de escritorio.",
+        "Estados de copia, advertencia y fallo conservan sus colores propios."
+      ],
+      "changesFromPrevious": [
+        "Sustituye la presentación Coral por Grafito Acero.",
+        "Conserva el comportamiento, la confianza universitaria y las 44 migraciones."
+      ],
+      "applicationRestoreOutcome": "Recuperación de los archivos anteriores del servidor y la distribución universitaria, con comprobación de salud.",
+      "fullRestoreOutcome": "Recuperación técnica mediante la instantánea o respaldo coherente de la VM universitaria."
+    }
+  ]
+}

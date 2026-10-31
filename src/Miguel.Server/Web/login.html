@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ATLAS Universidad · Acceso</title>
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=0.9.50-u.2">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/atlas-favicon.svg?v=0.9.50-u.2">
+  <script src="/assets/theme-init.js?v=0.9.50-u.2"></script>
+  <link rel="stylesheet" href="/assets/mineral-tokens.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/dashboard.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-components.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-motion-tokens.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-login.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/university-steel.css?v=0.9.50-u.2">
+</head>
+<body class="login-page mineral-motion-login">
+  <main class="login-shell">
+    <section class="login-brand" aria-labelledby="brandTitle">
+      <div class="login-brand-top">
+      <div class="brand-seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64">
+          <path d="M32 5 53 13v16c0 13-8.9 23.1-21 30C19.9 52.1 11 42 11 29V13L32 5Z"></path>
+          <path d="M23 27h18M23 35h12"></path>
+        </svg>
+      </div>
+      <span class="login-brand-word">Centro de operaciones</span>
+      </div>
+      <div class="login-brand-copy">
+      <p class="eyebrow">VISIBILIDAD DEL ENTORNO</p>
+      <h1 id="brandTitle">ATLAS</h1>
+      <p>Activos, respaldos y seguridad.<br>Todo en una sola visión.</p>
+      </div>
+      <div class="login-orbit" aria-hidden="true">
+        <div class="login-orbit-grid"></div>
+        <div class="login-orbit-ring"></div>
+        <div class="login-orbit-ring secondary"></div>
+        <div class="login-orbit-core"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-shield-check"></use></svg></div>
+        <span class="login-orbit-node node-a"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-device-desktop"></use></svg></span>
+        <span class="login-orbit-node node-b"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-database-export"></use></svg></span>
+        <span class="login-orbit-node node-c"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-shield-check"></use></svg></span>
+        <span class="login-orbit-node node-d"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-building-community"></use></svg></span>
+      </div>
+      <div class="security-note">
+        <span class="login-note-icon" aria-hidden="true"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-user-check"></use></svg></span>
+        <div>
+          <strong>Acceso institucional</strong>
+          <small>Entorno universitario de demostración</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-card" aria-labelledby="loginTitle">
+      <div class="login-appearance"><button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Cambiar apariencia">
+            <svg class="theme-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z"/></svg>
+            <span data-theme-label>Modo oscuro</span>
+          </button></div>
+      <div class="login-heading">
+        <span class="login-kicker">PORTAL INTERNO</span>
+        <h2 id="loginTitle">Iniciar sesión</h2>
+        <p>Accede con tu cuenta institucional de ATLAS.</p>
+      </div>
+
+      <div class="setup-warning hidden" id="setupWarning" role="status">
+        Aún no existe un administrador. Debe crearse desde la consola segura del servidor.
+      </div>
+
+      <form id="loginForm" autocomplete="on">
+        <label class="field">
+          <span>Usuario</span>
+          <input id="username" name="username" type="text" maxlength="64"
+                 autocomplete="username" required autofocus>
+        </label>
+
+        <label class="field">
+          <span>Contraseña</span>
+          <div class="password-field">
+            <input id="password" name="password" type="password" maxlength="128"
+                   autocomplete="current-password" required>
+            <button id="revealPassword" class="reveal-button" type="button"
+                    aria-label="Mantener presionado para mostrar la contraseña">
+              Ver
+            </button>
+          </div>
+        </label>
+
+        <label class="field hidden" id="mfaField"><span>Código de autenticación o recuperación</span><input id="mfaCode" name="code" type="text" maxlength="40" autocomplete="one-time-code"><small>Use el código de su aplicación autenticadora o uno de sus códigos de recuperación.</small></label>
+        <p class="form-error hidden" id="loginError" role="alert"></p>
+
+        <button class="primary-button login-button" id="loginButton" type="submit">
+          <span>Ingresar a ATLAS</span>
+          <svg class="atlas-icon button-arrow" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        <span>Sesión de una hora</span>
+        <span>Bloqueo tras intentos fallidos</span>
+        <span>Actividad auditada</span>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/login.js?v=0.9.50-u.2" defer></script>
+</body>
+</html>

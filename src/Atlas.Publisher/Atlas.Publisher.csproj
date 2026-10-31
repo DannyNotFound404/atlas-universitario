@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <AssemblyName>ATLAS.Publisher</AssemblyName>
+    <RootNamespace>Atlas.Publisher</RootNamespace>
+    <VersionPrefix>0.3.1</VersionPrefix>
+    <VersionSuffix>u.2</VersionSuffix>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationIcon>..\Atlas.Desktop\Assets\atlas-mineral.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miguel.Contracts\Miguel.Contracts.csproj" />
+    <Compile Include="../Atlas.Updater/VersionTagComparer.cs" Link="VersionTagComparer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Atlas.Desktop\Atlas.Desktop.csproj" />
+  </ItemGroup>
+</Project>

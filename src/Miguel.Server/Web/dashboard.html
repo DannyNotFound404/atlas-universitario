@@ -1,0 +1,1942 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>ATLAS Universidad · Centro de operaciones</title>
+  <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/favicon.ico?v=0.9.50-u.2">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/assets/atlas-favicon.svg?v=0.9.50-u.2">
+  <script src="/assets/theme-init.js?v=0.9.50-u.2"></script>
+  <link rel="stylesheet" href="/assets/mineral-tokens.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/dashboard.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/asset-custody.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/nas-lifecycle.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/backup-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/acronis-imports.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/network-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/network-scanner.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/updater-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/software-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/vulnerability-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/portal-workspace.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-components.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/operational-coherence.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-motion-tokens.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-motion.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/mineral-workspaces.css?v=0.9.50-u.2">
+  <link rel="stylesheet" href="/assets/university-steel.css?v=0.9.50-u.2">
+</head>
+<body class="mineral-motion-portal">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Accesos a todos los módulos">
+      <span class="motion-sr-only">Módulos de ATLAS</span>
+      <nav class="main-nav" aria-label="Navegación principal">
+        <span class="nav-label">OPERACIONES</span>
+        <button class="nav-item active" data-view="overview">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-layout-dashboard"></use></svg>
+          <span class="nav-text">Resumen<small>Estado ejecutivo</small></span>
+        </button>
+        <button class="nav-item" data-view="assets">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-device-desktop"></use></svg>
+          <span class="nav-text">Activos<small>Inventario y estado</small></span>
+          <span class="nav-count" id="navDeviceCount">0</span>
+        </button>
+        <button class="nav-item" data-view="agencies">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-building-community"></use></svg>
+          <span class="nav-text">Agencias<small>Organización y cobertura</small></span>
+        </button>
+        <button class="nav-item" data-view="backups">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-database-export"></use></svg>
+          <span class="nav-text">Control de respaldos<small>Evidencia y restauración</small></span>
+        </button>
+        <button class="nav-item" data-view="nas">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-server-2"></use></svg>
+          <span class="nav-text">NAS y respaldos<small>Recursos y almacenamiento</small></span>
+        </button>
+
+        <button class="nav-item" data-view="network">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-network"></use></svg>
+          <span class="nav-text">Redes e IP<small>Descubrimiento y cambios</small></span>
+        </button>
+
+        <span class="nav-label">SEGURIDAD</span>
+        <button class="nav-item" data-view="security">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-shield-check"></use></svg>
+          <span class="nav-text">Postura de seguridad<small>Controles y alertas</small></span>
+        </button>
+        <button class="nav-item" data-view="software">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-packages"></use></svg>
+          <span class="nav-text">Software<small>Inventario y licencias</small></span>
+        </button>
+        <button class="nav-item" data-view="distribution" data-installer-access>
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-upload"></use></svg>
+          <span class="nav-text">Actualizaciones<small>Releases y despliegues</small></span>
+        </button>
+
+        <span class="nav-label">GESTIÓN</span>
+        <button class="nav-item" data-view="governance">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-books"></use></svg>
+          <span class="nav-text">Políticas y procedimientos<small>Gobierno documental</small></span>
+        </button>
+        <button class="nav-item" data-view="training">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-school"></use></svg>
+          <span class="nav-text">Capacitaciones<small>Ciclos y asistencia</small></span>
+        </button>
+        <button class="nav-item" data-view="cases">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-briefcase-2"></use></svg>
+          <span class="nav-text">Expedientes<small>Operación y evidencia</small></span>
+        </button>
+        <button class="nav-item" data-view="reports">
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-report-analytics"></use></svg>
+          <span class="nav-text">Reportes<small>Informes y programación</small></span>
+        </button>
+        <button class="nav-item" data-view="audit" data-audit-access>
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-logs"></use></svg>
+          <span class="nav-text">Auditoría<small>Trazabilidad y evidencia</small></span>
+        </button>
+        <button class="nav-item" data-view="settings" data-admin-only>
+          <svg class="nav-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-settings"></use></svg>
+          <span class="nav-text">Configuración<small>Administración y accesos</small></span>
+        </button>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <a class="brand" href="/dashboard" aria-label="ATLAS · Centro de operaciones">
+          <div class="brand-seal small" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 5 53 13v16c0 13-8.9 23.1-21 30C19.9 52.1 11 42 11 29V13L32 5Z"></path><path d="M23 27h18M23 35h12"></path></svg></div>
+          <div><strong>ATLAS</strong><span>Centro de operaciones</span></div>
+        </a>
+        <nav class="motion-topnav" id="motionTopNav" aria-label="Grupos de módulos"><span class="motion-nav-indicator" aria-hidden="true"></span><button class="motion-group-button" type="button" data-motion-group="overview">Resumen</button><button class="motion-group-button" type="button" data-motion-group="assets">Activos</button><button class="motion-group-button" type="button" data-motion-group="backups">Respaldos</button><button class="motion-group-button" type="button" data-motion-group="security">Seguridad</button><button class="motion-group-button" type="button" data-motion-group="distribution">Actualizaciones</button><button class="motion-group-button" type="button" data-motion-group="management">Gestión</button></nav>
+        <div class="topbar-actions">
+          <button class="icon-button mobile-only" id="menuButton"
+                aria-label="Abrir navegación"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-menu-2"></use></svg></button>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" aria-label="Cambiar apariencia">
+            <svg class="theme-glyph" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16Z"/></svg>
+            <span data-theme-label>Modo oscuro</span>
+          </button>
+          <button class="icon-button motion-search-button" id="motionSearchButton" type="button" aria-label="Buscar un activo (Control K)" aria-expanded="false" aria-controls="motionGlobalSearch"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg></button>
+          <div id="motionGlobalSearch" class="motion-global-search"><label class="global-search">
+            <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg>
+            <input id="globalSearch" type="search"
+                   placeholder="Buscar equipo, usuario o serie…"
+                   aria-label="Buscar un activo">
+          </label></div>
+          <button class="sync-button" id="refreshButton" type="button" aria-label="Actualizar datos" title="Actualizar datos">
+            <svg class="atlas-icon sync-symbol" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-refresh"></use></svg>
+            <span>
+              <b>Datos reales</b>
+              
+            </span>
+          </button>
+          <div class="notification-center" id="notificationCenter">
+            <button class="notification-button" id="notificationButton"
+                    type="button" aria-label="Abrir notificaciones"
+                    aria-haspopup="dialog" aria-controls="notificationPanel" aria-expanded="false">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-bell"></use></svg>
+              <span class="notification-count hidden" id="notificationCount">0</span>
+            </button>
+            <aside class="notification-panel hidden" id="notificationPanel"
+                   role="dialog" aria-label="Historial de avisos">
+              <div class="notification-panel-header">
+                <div>
+                  <strong>Historial de avisos</strong>
+                  <span id="notificationPanelMeta">Sin avisos pendientes</span>
+                </div>
+                <button class="notification-mark-all" id="markAllNotifications"
+                        type="button">Marcar todo como leído</button>
+                <button class="notification-panel-close" id="notificationCloseButton"
+                        type="button" aria-label="Cerrar historial de avisos"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+              </div>
+              <div class="notification-rows" id="notificationRows"></div>
+              <div class="notification-panel-footer">
+                <span id="notificationPaginationLabel">0 avisos</span>
+                <div>
+                  <button class="icon-button" id="notificationPreviousPage"
+                          type="button" aria-label="Página anterior"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-chevron-left"></use></svg></button>
+                  <button class="icon-button" id="notificationNextPage"
+                          type="button" aria-label="Página siguiente"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-chevron-right"></use></svg></button>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div class="motion-profile-wrap">
+            <button class="motion-profile" id="motionProfileButton" type="button" aria-expanded="false" aria-controls="motionProfileMenu" aria-label="Mi cuenta y preferencias">
+              <span class="avatar" id="sidebarAvatar" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg></span>
+              <span class="motion-profile-copy"><strong id="sidebarUser">Cargando…</strong><span id="sidebarRole">—</span></span>
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-chevron-down"></use></svg>
+            </button>
+            <div class="motion-profile-menu" id="motionProfileMenu" hidden>
+              <strong>Mi cuenta</strong>
+              <button type="button" class="secondary-button compact" id="accountSecurityButton">Seguridad de mi cuenta</button>
+              <div class="motion-preference"><span>Animaciones de la interfaz</span><button type="button" id="motionAnimationToggle" class="motion-switch" role="switch" aria-label="Animaciones de la interfaz" aria-checked="true"></button></div>
+              <button class="secondary-button compact" id="logoutButton" type="button">
+            Cerrar sesión
+          </button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="motion-context-bar">
+        <div class="page-heading">
+          <span class="breadcrumb">Centro de operaciones / <b id="breadcrumb">Resumen</b></span>
+          <h1 id="pageTitle">Resumen ejecutivo</h1>
+        </div>
+        <div class="real-data-banner">
+        <span class="verified-mark"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-check"></use></svg></span>
+        <div>
+          <strong>Fuentes de ATLAS</strong>
+          <span>Telemetría de equipos y registros del portal. Consulte la fecha y el alcance de cada indicador.</span>
+          <small id="lastRefresh" class="motion-last-refresh">Actualizando…</small>
+        </div>
+      </div>
+      </div>
+      <nav class="motion-subnav" id="motionSubnav" aria-label="Secciones del grupo actual"></nav>
+
+      <div class="content-area">
+        <section class="view active" id="view-overview">
+          <div class="section-heading motion-overview-heading">
+            <div>
+              <p class="eyebrow" id="todayLabel">ESTADO ACTUAL</p>
+              <h2>Resumen operativo</h2>
+              <p>Equipos, copias y seguridad. Información recibida, con su fecha y alcance.</p>
+            </div>
+            <button class="secondary-button export-control" data-export type="button">Exportar inventario CSV</button>
+          </div>
+
+          <div class="motion-overview-grid">
+            <article class="panel motion-backup-hero navigable-summary" data-go="backups" role="link" tabindex="0">
+              <p class="motion-hero-kicker">CONTROL DE RESPALDOS</p>
+              <h3 id="overviewCopyTitle">Copias aceptables vigentes</h3>
+              <div class="motion-hero-reading"><strong class="motion-hero-value" id="overviewCopyValue">—</strong><span class="motion-hero-unit" id="overviewCopyUnit">Consultando controles…</span></div>
+              <p class="motion-hero-copy" id="overviewCopyScope">La vigencia se calcula con la evidencia, el alcance y el plazo configurados.</p>
+              <div class="motion-hero-progress" id="overviewCopyProgress" role="progressbar" aria-label="Controles con copia aceptable vigente" aria-valuemin="0" aria-valuemax="100"><span class="motion-hero-progress-fill" id="overviewCopyProgressFill"></span></div>
+              <div class="motion-hero-breakdown" id="overviewCopyBreakdown"></div>
+              <footer class="motion-hero-footer"><span id="overviewCopyFootnote">Pendiente de consultar el corte del módulo.</span><span class="chart-link">Ver seguimiento <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></footer>
+            </article>
+
+            <div class="motion-metric-grid">
+              <article class="kpi-card navigable-summary" data-go="assets" role="link" tabindex="0">
+                <svg class="atlas-icon motion-metric-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-device-desktop"></use></svg>
+                <span class="kpi-label">Activos administrados</span><strong class="kpi-value" id="kpiTotal">—</strong><span class="kpi-meta" id="kpiTotalMeta">Consultando…</span>
+              </article>
+              <article class="kpi-card accent navigable-summary" data-go="assets" role="link" tabindex="0">
+                <svg class="atlas-icon motion-metric-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-network"></use></svg>
+                <span class="kpi-label">En línea</span><strong class="kpi-value" id="kpiOnline">—</strong><span class="kpi-meta" id="kpiOnlineMeta">Reporte en últimos 15 minutos</span>
+              </article>
+              <article class="kpi-card navigable-summary" data-go="security" role="link" tabindex="0">
+                <svg class="atlas-icon motion-metric-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-shield-check"></use></svg>
+                <span class="kpi-label">Antivirus o EDR reportado</span><strong class="kpi-value" id="kpiSecurity">—</strong><span class="kpi-meta" id="kpiSecurityMeta">Antivirus o EDR reportado</span>
+              </article>
+              <article class="kpi-card warning-card navigable-summary" data-go="assets" role="link" tabindex="0">
+                <svg class="atlas-icon motion-metric-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-history"></use></svg>
+                <span class="kpi-label">Con reporte demorado</span><strong class="kpi-value" id="kpiAttention">—</strong><span class="kpi-meta" id="kpiAttentionMeta">Sin reporte reciente</span>
+              </article>
+            </div>
+
+            <article class="panel executive-panel motion-trend-card navigable-summary" data-go="security" role="link" tabindex="0">
+              <div class="panel-heading"><div><p class="eyebrow">ACTIVIDAD OBSERVADA</p><h3>Eventos de seguridad</h3><p>Eventos de Windows recibidos durante siete días; no equivale a incidentes confirmados.</p></div><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-report-analytics"></use></svg></div>
+              <div class="motion-trend-total"><strong id="overviewEventTotal">—</strong><span>eventos recibidos</span></div>
+              <div class="trend-chart" id="overviewSecurityTrend"></div>
+              <div class="motion-trend-footer"><span>Fuente: agentes · registros recibidos</span><span class="chart-link">Ver bitácoras <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></div>
+            </article>
+          </div>
+
+          <div class="motion-overview-lower">
+            <article class="panel executive-panel navigable-summary mineral-continuity" data-go="backups" role="link" tabindex="0">
+              <div class="panel-heading"><div><h3>Continuidad operativa</h3><p>Evaluación de equipos configurados con Atlas Backup / NAS.</p></div><span class="chart-link">Ver copias <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></div>
+              <div class="horizontal-chart" id="overviewBackupChart"></div><p class="chart-scope" id="backupTruth"></p>
+            </article>
+
+            <article class="panel motion-recent-card" data-admin-only>
+              <div class="panel-heading"><div><h3>Equipos de la consulta actual</h3><p>Hasta ocho activos del inventario mostrado.</p></div><button class="text-button" data-go="assets" type="button">Abrir inventario</button></div>
+              <div class="table-wrap"><table class="data-table"><thead><tr><th>Equipo</th><th>Agencia</th><th>Fabricante / modelo</th><th>Agente</th><th>Seguridad registrada</th><th>Último reporte</th><th>IPv4 reportada</th></tr></thead><tbody id="recentDeviceRows"></tbody></table></div>
+            </article>
+          </div>
+
+          <section class="panel operational-attention" id="operationalAttention" aria-label="Atención actual"></section>
+
+          <details class="panel motion-overview-details">
+            <summary>Más indicadores del entorno <span>Conectividad, controles de seguridad e infraestructura</span></summary>
+            <div class="executive-dashboard">
+              <article class="panel executive-panel navigable-summary" data-go="assets" role="link" tabindex="0">
+                <div class="panel-heading"><div><h3>Conectividad de la flota</h3><p>Distribución de los equipos por estado actual.</p></div><span class="chart-link">Ver activos <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></div>
+                <div class="donut-layout"><div class="atlas-donut" id="overviewConnectivityChart"><div><strong id="overviewConnectivityTotal">0</strong><span>activos</span></div></div><div class="chart-legend" id="overviewConnectivityLegend"></div></div>
+              </article>
+              <article class="panel executive-panel navigable-summary" data-go="security" role="link" tabindex="0">
+                <div class="panel-heading"><div><h3>Cobertura de controles</h3><p>Confirmaciones recibidas sobre el total de activos; el resto puede incluir datos no disponibles. Revise la fecha de cada equipo.</p></div><span class="chart-link">Ver postura <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></div>
+                <div class="horizontal-chart" id="overviewSecurityChart"></div>
+              </article>
+              <article class="panel executive-panel navigable-summary" data-go="nas" role="link" tabindex="0">
+                <div class="panel-heading"><div><h3>Infraestructura administrada</h3><p>Agencias, NAS, recursos e inventario de red.</p></div><span class="chart-link">Ver NAS <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-right"></use></svg></span></div>
+                <div class="executive-metrics" id="overviewInfrastructureMetrics"></div>
+              </article>
+            </div>
+          </details>
+
+          <details class="panel motion-agency-details">
+            <summary>Estado por agencia <span>Agentes inscritos y comunicación reciente</span></summary>
+            <div class="panel-heading"><div><h3>Estado por agencia</h3><p>Consolidado de agentes inscritos y comunicación reciente.</p></div><button class="text-button" data-go="agencies" type="button">Ver agencias</button></div>
+            <div class="table-wrap"><table class="data-table"><thead><tr><th>Agencia / usuario actual</th><th>Activos</th><th>En línea</th><th>Atención</th><th>Sin reportar</th><th>Seguridad</th><th>Último reporte</th></tr></thead><tbody id="overviewAgencyRows"></tbody></table></div>
+          </details>
+          <div hidden aria-hidden="true"><span id="backupSuccess"></span><span id="backupWarning"></span><span id="backupFailed"></span><span id="backupMissing"></span></div>
+        </section>
+
+        <section class="view" id="view-assets">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">INVENTARIO CENTRAL</p>
+              <h2>Activos administrados</h2>
+              <p>Hardware, usuarios, seguridad y estado del agente.</p>
+              <div class="asset-heading-actions" data-admin-only><button class="primary-button" type="button" data-custody-bulk>Completar asignaciones existentes</button></div>
+            </div>
+            <button class="secondary-button export-control" data-export type="button">
+              Exportar CSV
+            </button>
+          </div>
+
+          <div class="filter-bar">
+            <label class="filter-search">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg>
+              <input id="assetSearch" type="search" aria-label="Buscar activos por equipo, usuario, serie o modelo"
+                     placeholder="Hostname, usuario, serie, modelo…">
+            </label>
+            <select id="agencyFilter" aria-label="Filtrar por agencia">
+              <option value="">Todas las agencias</option>
+            </select>
+            <select id="statusFilter" aria-label="Filtrar por estado">
+              <option value="">Todos los estados</option>
+              <option value="Online">En línea</option>
+              <option value="Attention">Atención</option>
+              <option value="Offline">Sin reportar</option>
+              <option value="Retired">Retirados</option>
+            </select>
+            <button class="secondary-button compact" id="clearFilters" type="button">
+              Limpiar
+            </button>
+          </div>
+
+          <article class="panel table-panel">
+            <div class="table-toolbar">
+              <span id="deviceResultLabel">Consultando activos…</span>
+              <button id="assetColumnsToggle" class="secondary-button compact" type="button" aria-pressed="false" aria-controls="assetInventoryTable">Vista técnica</button>
+              <span class="refresh-indicator" id="deviceLoading">Actualizando</span>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table asset-inventory-table" id="assetInventoryTable" data-columns="essential">
+                <thead>
+                  <tr>
+                    <th>Equipo</th>
+                    <th>Agencia / usuario actual</th>
+                    <th class="asset-technical-column">Hardware</th>
+                    <th class="asset-technical-column">Memoria / disco</th>
+                    <th>Seguridad registrada</th>
+                    <th>Versiones</th>
+                    <th>Último reporte</th>
+                    <th>IPv4 reportada</th>
+                  </tr>
+                </thead>
+                <tbody id="deviceRows"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <span id="paginationLabel">Página 1</span>
+              <div>
+                <button id="previousPage" type="button">Anterior</button>
+                <button id="nextPage" type="button">Siguiente</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-agencies">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">COBERTURA TERRITORIAL</p>
+              <h2>Agencias</h2>
+              <p>Consolidado real de equipos inscritos.</p>
+            </div>
+          </div>
+          <div class="section-actions" data-admin-only>
+            <button class="primary-button" id="newAgencyButton" type="button">Registrar agencia</button>
+          </div>
+          <article class="panel management-panel hidden" id="agencyFormPanel">
+            <div class="panel-heading">
+              <div><h3 id="agencyFormTitle">Nueva agencia</h3><p>El codigo identifica permanentemente la ubicacion.</p></div>
+            </div>
+            <form class="management-form" id="agencyForm">
+              <label class="field"><span>Codigo</span><input id="agencyCode" maxlength="64" placeholder="PRUEBAS" required></label>
+              <label class="field"><span>Nombre visible</span><input id="agencyName" maxlength="128" placeholder="Agencia de pruebas" required></label>
+              <label class="field"><span>Ubicacion</span><input id="agencyLocation" maxlength="192" placeholder="Ciudad, departamento"></label>
+              <label class="field"><span>Responsable</span><input id="agencyResponsible" maxlength="128" placeholder="Nombre o cargo"></label>
+              <label class="field"><span>Proveedor predeterminado</span><select id="agencyProvider"><option value="ATLAS">ATLAS / BackupNAS</option><option value="ACRONIS">Acronis</option><option value="EXTERNAL">Proveedor externo</option></select></label>
+              <div class="form-actions"><button class="secondary-button" id="cancelAgency" type="button">Cancelar</button><button class="primary-button" id="agencySubmit" type="submit">Guardar agencia</button></div>
+            </form>
+          </article>
+          <div class="agency-cards" id="agencyCards"></div>
+          <article class="panel">
+            <div class="panel-heading">
+              <div>
+                <h3>Detalle por agencia</h3>
+                <p>Seleccione una agencia para abrir sus activos.</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Agencia</th>
+                    <th>Activos</th>
+                    <th>En línea</th>
+                    <th>Atención</th>
+                    <th>Sin reportar</th>
+                    <th>Seguridad detectada</th>
+                    <th>Último heartbeat</th>
+                    <th>Última copia</th>
+                  </tr>
+                </thead>
+                <tbody id="agencyRows"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-backups">
+          <div class="section-heading backup-control-heading">
+            <div>
+              <p class="eyebrow">CONTINUIDAD Y EVIDENCIA</p>
+              <h2>Control de respaldos</h2>
+              <p>Seguimiento configurado, resultados reales, evidencias y pruebas de restauración en un solo lugar.</p>
+            </div>
+            <button class="primary-button" id="newBackupControlButton" type="button" data-backup-control-manage>Nuevo control</button>
+          </div>
+
+          <div class="backup-control-summary-grid" aria-label="Resumen de controles de respaldo">
+            <article class="panel backup-control-kpi"><span>CONTROLES ACTIVOS</span><strong id="backupControlTotal">0</strong><small id="backupControlCoverage">0 % con evidencia vigente</small></article>
+            <article class="panel backup-control-kpi healthy"><span>AL DÍA</span><strong id="backupControlCompliant">0</strong><small>Dentro de la frecuencia configurada</small></article>
+            <article class="panel backup-control-kpi attention"><span>REQUIEREN ATENCIÓN</span><strong id="backupControlAttention">0</strong><small>Sin confirmar, advertencia o configuración</small></article>
+            <article class="panel backup-control-kpi critical"><span>FALLAS O ATRASOS</span><strong id="backupControlFailed">0</strong><small id="backupControlOverdue">0 controles vencidos</small></article>
+            <article class="panel backup-control-kpi review"><span>POR ACTIVAR</span><strong id="backupControlPending">0</strong><small id="backupControlRestoreDue">0 pruebas de restauración vencidas</small></article>
+          </div>
+
+          <article class="panel backup-standard-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">CONFIGURACIÓN CONSISTENTE</p>
+                <h3>Estándares de respaldo</h3>
+                <p>Aplican valores comunes sin impedir personalizaciones y excepciones justificadas.</p>
+              </div>
+              <span class="standard-catalog-count" id="backupStandardCount">0 estándares vigentes</span>
+            </div>
+            <div class="backup-standard-catalog" id="backupStandardCatalog"></div>
+          </article>
+
+          <dialog class="backup-activation-dialog" id="backupActivationDialog" aria-labelledby="backupActivationTitle" aria-describedby="backupActivationDescription">
+            <form method="dialog">
+              <p class="eyebrow">SEGUIMIENTO DE RESPALDOS</p>
+              <h3 id="backupActivationTitle">Activar seguimiento</h3>
+              <strong id="backupActivationCode"></strong>
+              <p id="backupActivationDescription">ATLAS evaluará los resultados y generará alertas según la configuración guardada de este control.</p>
+              <div class="form-actions">
+                <button class="secondary-button" type="submit" value="cancel" autofocus>Cancelar</button>
+                <button class="primary-button" type="submit" value="activate">Activar seguimiento</button>
+              </div>
+            </form>
+          </dialog>
+          <article class="panel management-panel hidden" id="backupControlFormPanel">
+            <div class="panel-heading">
+              <div><h3 id="backupControlFormTitle">Registrar control de respaldo</h3><p>Seleccione el activo y ATLAS combinará datos detectados, valores del estándar y decisiones manuales.</p></div>
+            </div>
+            <form class="management-form backup-control-form" id="backupControlForm">
+              <input id="backupControlId" type="hidden">
+              <div class="backup-configuration-choice wide">
+                <label class="field"><span>Forma de configuración</span><select id="backupControlConfigurationMode" required><option value="STANDARD">Aplicar estándar recomendado</option><option value="CUSTOMIZED">Personalizar un estándar</option><option value="MANUAL">Configuración personalizada controlada</option></select></label>
+                <label class="field"><span>Estándar aplicable</span><select id="backupControlStandard" required></select></label>
+                <div class="backup-autofill-summary" id="backupControlAutofillSummary" aria-live="polite"><strong>Seleccione un activo</strong><span>ATLAS identificará la configuración disponible.</span></div>
+              </div>
+              <label class="field wide hidden" id="backupControlReasonField"><span>Justificación de la configuración</span><textarea id="backupControlReason" maxlength="1000" rows="2" placeholder="Explique por qué se personaliza el estándar o se completa manualmente"></textarea></label>
+              <div class="backup-origin-legend wide" aria-label="Origen de los valores"><span class="origin detected">Detectado por ATLAS</span><span class="origin inherited">Heredado</span><span class="origin suggested">Sugerido</span><span class="origin manual">Manual</span><span class="origin override">Personalizado</span></div>
+
+              <label class="field" data-origin-field="code"><span>Código</span><input id="backupControlCode" maxlength="64" placeholder="BKP-CENTRAL-001" required></label>
+              <label class="field" data-origin-field="systemName"><span>Sistema o activo</span><input id="backupControlSystem" maxlength="160" placeholder="Archivos de Contabilidad" required></label>
+              <label class="field" data-origin-field="agency"><span>Agencia</span><select id="backupControlAgency" required><option value="">Seleccione una agencia</option></select></label>
+              <label class="field" data-origin-field="scopeType"><span>Tipo de alcance</span><select id="backupControlScopeType" required><option value="ENDPOINT">Endpoint</option><option value="ON_PREM_SYSTEM">Sistema local</option><option value="LOCAL_EXPORT">Archivo o exportación local</option></select></label>
+              <label class="field" data-origin-field="provider"><span>Proveedor</span><select id="backupControlProvider" required><option value="ATLAS_BACKUPNAS">Atlas Backup / NAS</option><option value="ACRONIS">Acronis Cloud</option><option value="OTHER">Otro autorizado</option></select></label>
+              <label class="field" data-origin-field="operationMode"><span>Modo operativo</span><select id="backupControlMode" required><option value="SEMI_AUTOMATIC">Semiautomático</option><option value="AUTOMATIC">Automático</option><option value="MANUAL">Manual</option></select></label>
+              <label class="field" data-origin-field="device"><span>Equipo ATLAS</span><select id="backupControlDevice"><option value="">No aplica</option></select></label>
+              <label class="field" data-origin-field="nas"><span>NAS autorizado</span><select id="backupControlNas"><option value="">No aplica</option></select></label>
+              <label class="field" data-origin-field="technology"><span>Tecnología</span><input id="backupControlTechnology" maxlength="160" placeholder="Acronis Cloud o Atlas Backup" required></label>
+              <label class="field" data-origin-field="taskName"><span>Nombre de tarea</span><input id="backupControlTask" maxlength="160" placeholder="Respaldo diario" required></label>
+
+              <fieldset class="backup-scope-builder wide" data-origin-field="protectedScope">
+                <legend>Alcance protegido esperado</legend>
+                <p>No representa detección técnica; define lo que el control exige proteger.</p>
+                <div class="backup-scope-options">
+                  <label><input type="checkbox" name="backupScopeCategory" value="STANDARD_BACKUPNAS"><span>Configuración estándar de BackupNAS</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="ACRONIS_POLICY"><span>Política autorizada de Acronis</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="DOCUMENTS"><span>Documentos</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="DESKTOP"><span>Escritorio</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="IMAGES"><span>Imágenes</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="FAVORITES"><span>Favoritos</span></label>
+                  <label><input type="checkbox" name="backupScopeCategory" value="DOWNLOADS"><span>Descargas</span></label>
+                </div>
+              </fieldset>
+              <label class="field wide backup-explicit-folders"><span>Carpetas exactas que debe comprobar este control · una por línea</span><textarea id="backupControlFolders" maxlength="4000" rows="4" placeholder="Documents\Archivos de Outlook&#10;Documents\Informes_importante"></textarea><p>Confirma las carpetas que utiliza la copia de este equipo. No se deducen de una descripción general ni se cambian las tareas del programa de respaldo al guardar este control. Las carpetas particulares se conservan como una lista verificable.</p></label>
+              <label class="field wide" data-origin-field="protectedScope"><span>Descripción consolidada del alcance</span><textarea id="backupControlProtectedScope" maxlength="8000" rows="3" placeholder="Información, carpetas, volúmenes o configuración incluida" required></textarea></label>
+              <label class="field" data-origin-field="protectedScopeAdditional"><span>Alcance adicional</span><textarea id="backupControlScopeAdditional" maxlength="4000" rows="2" placeholder="Carpetas o sistemas adicionales"></textarea></label>
+              <label class="field" data-origin-field="protectedScopeExclusions"><span>Exclusiones justificadas</span><textarea id="backupControlScopeExclusions" maxlength="4000" rows="2" placeholder="Elementos que deliberadamente no se protegen"></textarea></label>
+
+              <label class="field" data-origin-field="frequency"><span>Frecuencia (horas)</span><input id="backupControlFrequency" type="number" min="1" max="8760" value="24" required></label>
+              <label class="field" data-origin-field="grace"><span>Margen permitido (minutos)</span><input id="backupControlGrace" type="number" min="0" max="10080" value="120" required></label>
+              <label class="field" data-origin-field="retention"><span>Retención institucional</span><input id="backupControlRetention" type="number" value="180" readonly required><small>6 meses · Política de Seguridad V4, páginas 9–10.</small></label>
+              <label class="field" data-origin-field="rpo"><span>RPO (horas)</span><input id="backupControlRpo" type="number" min="1" max="8760" placeholder="24" required></label>
+              <label class="field" data-origin-field="rto"><span>RTO (minutos)</span><input id="backupControlRto" type="number" min="1" max="10080" placeholder="Debe confirmarse" required></label>
+              <label class="field" data-origin-field="restoreInterval"><span>Prueba cada (días)</span><input id="backupControlRestoreInterval" type="number" min="1" max="730" placeholder="90" required></label>
+              <label class="field" data-origin-field="technicalResponsible"><span>Responsable técnico</span><input id="backupControlResponsible" maxlength="160" value="Coordinador de Ciberseguridad" readonly required></label>
+              <label class="field" data-origin-field="processOwner"><span>Propietario del proceso</span><input id="backupControlOwner" maxlength="160" placeholder="Responsable del área" required></label>
+              <label class="field wide" data-origin-field="destination"><span>Destino esperado</span><input id="backupControlDestination" maxlength="512" placeholder="Acronis Cloud o ruta lógica autorizada" required></label>
+
+              <div class="backup-exception-box wide">
+                <label class="field"><span>Tratamiento especial</span><select id="backupControlExceptionType"><option value="NONE">Sin excepción</option><option value="OPERATIONAL">Excepción operativa</option><option value="NORMATIVE">Excepción normativa</option></select></label>
+                <label class="field hidden" id="backupControlExceptionReasonField"><span>Justificación de la excepción</span><textarea id="backupControlExceptionReason" maxlength="2000" rows="2"></textarea></label>
+                <label class="field hidden" id="backupControlExceptionExpiryField"><span>Revisar excepción el</span><input id="backupControlExceptionExpiry" type="datetime-local"></label>
+                <p class="backup-exception-warning hidden" id="backupControlExceptionWarning">Una excepción normativa puede documentarse como borrador. Su activación requiere tratamiento formal.</p>
+              </div>
+              <label class="check-field"><input id="backupControlEnabled" type="checkbox" checked><span>Activar seguimiento al guardar</span></label>
+              <div class="backup-control-save-note wide"><strong>Configure y active en un solo paso.</strong><span>Desmarque la opción para guardar un borrador o pausar el seguimiento. Cancelar descarta los cambios del formulario.</span></div>
+              <div class="form-actions"><button class="secondary-button" id="backupControlCancel" type="button">Cancelar</button><button class="primary-button" id="backupControlSave" type="submit">Guardar y activar seguimiento</button></div>
+            </form>
+          </article>
+
+          <article class="panel management-panel hidden" id="backupObservationPanel">
+            <div class="panel-heading"><div><h3 id="backupObservationTitle">Registrar comprobación</h3><p>Úselo para Acronis o una verificación manual. Los resultados de Atlas Backup llegan automáticamente.</p></div></div>
+            <form class="management-form backup-control-form" id="backupObservationForm">
+              <input id="backupObservationProfileId" type="hidden">
+              <label class="field"><span>Fuente</span><select id="backupObservationSource" required><option value="ACRONIS_EVIDENCE">Comprobante de Acronis</option><option value="MANUAL">Verificación manual</option></select></label>
+              <label class="field"><span>Resultado</span><select id="backupObservationResult" required><option value="SUCCESS">Correcto</option><option value="WARNING">Con advertencias</option><option value="FAILED">Fallido</option></select></label>
+              <label class="field"><span>Inicio del período</span><input id="backupObservationPeriodStart" type="datetime-local" required></label>
+              <label class="field"><span>Fin del período</span><input id="backupObservationPeriodEnd" type="datetime-local" required></label>
+              <label class="field"><span>Inicio de ejecución</span><input id="backupObservationStarted" type="datetime-local"></label>
+              <label class="field"><span>Fin de ejecución</span><input id="backupObservationFinished" type="datetime-local"></label>
+              <label class="field"><span>Referencia externa</span><input id="backupObservationReference" maxlength="255" placeholder="ID de tarea, informe o ticket"></label>
+              <label class="field wide"><span>Detalle</span><textarea id="backupObservationDetail" maxlength="2000" rows="3" placeholder="Resultado observado, advertencias o error"></textarea></label>
+              <div class="form-actions"><button class="secondary-button" id="backupObservationCancel" type="button">Cancelar</button><button class="primary-button" id="backupObservationSave" type="submit">Registrar comprobación</button></div>
+            </form>
+          </article>
+
+          <article class="panel management-panel hidden" id="backupRestorationPanel">
+            <div class="panel-heading"><div><h3 id="backupRestorationTitle">Documentar prueba de restauración</h3><p>Registre el resultado real, incluyendo recuperaciones históricas en caliente.</p></div></div>
+            <form class="management-form backup-control-form" id="backupRestorationForm">
+              <input id="backupRestorationProfileId" type="hidden">
+              <label class="field"><span>Modalidad</span><select id="backupRestorationModality" required><option value="FILE">Archivo</option><option value="APPLICATION">Aplicación</option><option value="SYSTEM">Sistema</option><option value="HOT_RECOVERY">Recuperación en caliente</option></select></label>
+              <label class="field"><span>Resultado</span><select id="backupRestorationResult" required><option value="SUCCESS">Exitosa</option><option value="WARNING">Exitosa con observaciones</option><option value="FAILED">Fallida</option></select></label>
+              <label class="field"><span>Copia utilizada</span><input id="backupRestorationBackupUsed" type="datetime-local"></label>
+              <label class="field"><span>Inicio</span><input id="backupRestorationStarted" type="datetime-local" required></label>
+              <label class="field"><span>Finalización</span><input id="backupRestorationFinished" type="datetime-local" required></label>
+              <label class="field"><span>RTO alcanzado (minutos)</span><input id="backupRestorationRto" type="number" min="0" max="10080"></label>
+              <label class="field"><span>Ejecutada por</span><input id="backupRestorationExecutedBy" maxlength="160" required></label>
+              <label class="field"><span>Validada por</span><input id="backupRestorationValidatedBy" maxlength="160" placeholder="Propietario del proceso"></label>
+              <label class="field"><span>Fecha de validación</span><input id="backupRestorationValidatedAt" type="datetime-local"></label>
+              <label class="field"><span>Próxima prueba</span><input id="backupRestorationNextDue" type="datetime-local"></label>
+              <label class="field wide"><span>Alcance probado</span><textarea id="backupRestorationScope" maxlength="8000" rows="3" required></textarea></label>
+              <label class="check-field"><input id="backupRestorationIntegrity" type="checkbox"><span>Integridad verificada</span></label>
+              <label class="check-field"><input id="backupRestorationFunctionality" type="checkbox"><span>Funcionamiento verificado</span></label>
+              <label class="check-field"><input id="backupRestorationHistorical" type="checkbox"><span>Registro histórico o retrospectivo</span></label>
+              <label class="field wide"><span>Observaciones</span><textarea id="backupRestorationNotes" maxlength="4000" rows="3"></textarea></label>
+              <div class="form-actions"><button class="secondary-button" id="backupRestorationCancel" type="button">Cancelar</button><button class="primary-button" id="backupRestorationSave" type="submit">Guardar prueba</button></div>
+            </form>
+          </article>
+
+          <article class="panel management-panel hidden" id="backupEvidencePanel">
+            <div class="panel-heading"><div><h3 id="backupEvidenceTitle">Incorporar evidencia</h3><p>ATLAS conservará el archivo fuera del portal y calculará su huella SHA-256.</p></div></div>
+            <form class="management-form backup-control-form" id="backupEvidenceForm">
+              <input id="backupEvidenceProfileId" type="hidden">
+              <label class="field"><span>Tipo</span><select id="backupEvidenceType" required><option value="REPORT">Informe</option><option value="LOG">Registro</option><option value="SCREENSHOT">Captura</option><option value="ACT">Acta</option><option value="EXPORT">Exportación</option><option value="OTHER">Otro</option></select></label>
+              <label class="field"><span>Fecha de la evidencia</span><input id="backupEvidenceAt" type="datetime-local" required></label>
+              <label class="field"><span>Origen</span><input id="backupEvidenceSource" maxlength="160" placeholder="Acronis, Atlas Backup o prueba manual"></label>
+              <label class="field wide backup-evidence-file"><span>Archivo de evidencia</span><input id="backupEvidenceFile" type="file" accept=".pdf,.docx,.xlsx,.png,.jpg,.jpeg,.txt,.csv,.log" required><small id="backupEvidenceFileLabel">PDF, Office, imagen, CSV, texto o log; máximo 25 MB.</small></label>
+              <label class="field wide"><span>Descripción</span><textarea id="backupEvidenceDescription" maxlength="1000" rows="3"></textarea></label>
+              <div class="form-actions"><button class="secondary-button" id="backupEvidenceCancel" type="button">Cancelar</button><button class="primary-button" id="backupEvidenceUpload" type="submit">Guardar evidencia</button></div>
+            </form>
+          </article>
+
+          <article class="panel backup-control-detail hidden" id="backupControlDetailPanel">
+            <div class="panel-heading"><div><h3 id="backupControlDetailTitle">Detalle del control</h3><p id="backupControlDetailMeta">—</p></div><button class="icon-button" id="backupControlDetailClose" type="button" aria-label="Cerrar detalle">×</button></div>
+            <div id="backupControlDetailBody"></div>
+          </article>
+
+          <div class="empty-state" id="backupControlEmptyState">
+            <div class="empty-icon"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-database-export"></use></svg></div>
+            <h3>Defina el primer control</h3>
+            <p>
+              ATLAS ya puede recibir resultados de Atlas Backup. Cree un perfil para establecer la frecuencia,
+              el responsable, el destino y las pruebas de restauración esperadas.
+            </p>
+            <div class="empty-next">
+              <span>Siguiente acción</span>
+              <strong>Registrar el primer control y completar su validación operativa.</strong>
+            </div>
+          </div>
+
+          <article class="panel backup-control-table-panel">
+            <div class="panel-heading"><div><h3>Controles definidos</h3><p>Los controles con seguimiento activo generan cumplimiento y alertas.</p></div></div>
+            <div class="table-wrap">
+              <table class="data-table backup-control-table">
+                <thead><tr><th>Control</th><th>Agencia</th><th>Protección</th><th>Última evidencia</th><th>Restauración</th><th>Estado</th><th>Acciones</th></tr></thead>
+                <tbody id="backupControlRows"></tbody>
+              </table>
+            </div>
+          </article>
+
+          <article class="panel backup-coverage-panel">
+            <div class="panel-heading">
+              <div><h3>Telemetría técnica por equipo</h3><p>Vista de compatibilidad con los resultados enviados por Atlas Backup. Acronis se comprueba en los controles definidos arriba.</p></div>
+              <div class="table-sort-controls" aria-label="Ordenar cobertura de respaldo">
+                <select id="backupSortBy" aria-label="Ordenar copias por">
+                  <option value="machineName">Equipo</option>
+                  <option value="agencyCode">Agencia</option>
+                  <option value="lastBackupAtUtc">Tiempo de última copia</option>
+                  <option value="compliance">Estado</option>
+                  <option value="backupProvider">Proveedor</option>
+                  <option value="bytesCopied">Datos transferidos</option>
+                </select>
+                <button class="secondary-button compact sort-direction" id="backupSortDirection" type="button" aria-label="Cambiar dirección">A → Z</button>
+              </div>
+            </div>
+            <div class="empty-state compact hidden" id="backupEmptyState"><p>No se han recibido ejecuciones técnicas de Atlas Backup.</p></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Equipo</th><th>Agencia</th><th>Proveedor</th><th>Destino</th><th>Ultima copia</th><th>Transferido</th><th>Estado</th></tr></thead>
+                <tbody id="backupCoverageRows"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <span id="backupCoveragePaginationLabel">Página 1</span>
+              <div>
+                <button id="backupCoveragePreviousPage" type="button">Anterior</button>
+                <button id="backupCoverageNextPage" type="button">Siguiente</button>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="view-nas">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">ALMACENAMIENTO DISTRIBUIDO</p>
+              <h2>NAS y recursos de respaldo</h2>
+              <p>Cada NAS fisico puede publicar varios destinos de respaldo independientes.</p>
+            </div>
+          </div>
+          <div class="section-actions" data-admin-only>
+            <button class="primary-button" id="newNasButton" type="button">Registrar nuevo NAS</button>
+          </div>
+
+          <article class="panel management-panel hidden" id="nasFormPanel">
+            <div class="panel-heading">
+              <div><h3 id="nasFormTitle">Registrar destino de respaldo</h3><p>Los equipos escriben por SMB; el servidor puede inspeccionarlo mediante CIFS o NFS de solo lectura.</p></div>
+            </div>
+            <form class="management-form" id="nasForm">
+              <label class="field"><span>Codigo del recurso</span><input id="nasCode" maxlength="64" placeholder="NAS-PRUEBAS-DANNY" required></label>
+              <label class="field"><span>Nombre visible</span><input id="nasName" maxlength="128" placeholder="Respaldo de Colaborador de ejemplo" required></label>
+              <label class="field"><span>Agencia</span><select id="nasAgency" required><option value="">Seleccione una agencia</option></select></label>
+              <label class="field"><span>Host o IPv4</span><input id="nasHost" maxlength="255" placeholder="192.0.2.10" required></label>
+              <label class="field"><span>Puerto SMB</span><input id="nasPort" type="number" min="1" max="65535" value="445" required></label>
+              <label class="field"><span>Recurso compartido exacto</span><input id="nasShare" maxlength="128" placeholder="Colaborador de ejemplo" required></label>
+              <label class="field"><span>Fabricante</span><input id="nasManufacturer" maxlength="96" placeholder="D-Link, QNAP, Synology..."></label>
+              <label class="field"><span>Modelo</span><input id="nasModel" maxlength="128"></label>
+              <label class="field"><span>Serie</span><input id="nasSerial" maxlength="128"></label>
+              <label class="check-field"><input id="nasPrimary" type="checkbox" checked><span>Recurso principal de la agencia</span></label>
+              <div class="form-actions"><button class="secondary-button" id="cancelNas" type="button">Cancelar</button><button class="primary-button" id="nasSubmit" type="submit">Guardar recurso</button></div>
+            </form>
+          </article>
+
+          <article class="panel management-panel hidden" id="nasMountPanel">
+            <div class="panel-heading">
+              <div>
+                <h3 id="nasMountTitle">Configurar montaje de solo lectura</h3>
+                <p>ATLAS creará y validará el montaje persistente en Linux sin guardar la contraseña en PostgreSQL.</p>
+              </div>
+            </div>
+            <form class="management-form" id="nasMountForm">
+              <label class="field"><span>Protocolo de inspección</span><select id="nasMountProtocol" required><option value="CIFS">CIFS / SMB</option><option value="NFS">NFS v3</option></select></label>
+              <label class="field nas-cifs-field"><span>Usuario de solo lectura</span><input id="nasMountUsername" maxlength="128" autocomplete="username" placeholder="atlas_reader"></label>
+              <label class="field nas-cifs-field"><span>Contraseña SMB</span><input id="nasMountPassword" type="password" maxlength="512" autocomplete="new-password"></label>
+              <label class="field nas-cifs-field"><span>Dominio SMB (opcional)</span><input id="nasMountDomain" maxlength="128" placeholder="DOMINIO-DEMO"></label>
+              <label class="field nas-cifs-field"><span>Seguridad SMB</span><select id="nasMountSecurity"><option value="SMB311_SEAL">SMB 3.1.1 cifrado (recomendado)</option><option value="SMB30_SEAL">SMB 3.0 cifrado</option><option value="SMB30_SIGN">SMB 3.0 firmado</option><option value="SMB21_SIGN">SMB 2.1 firmado (compatibilidad)</option></select></label>
+              <label class="check-field nas-cifs-field"><input id="nasMountAllShares" type="checkbox"><span id="nasMountScopeText">Aplicar esta cuenta a todos los recursos registrados del mismo NAS</span></label>
+              <label class="field nas-nfs-field hidden"><span>Exportación NFS exacta</span><input id="nasMountNfsExport" maxlength="512" placeholder="/nfs/usuario_respaldo"></label>
+              <p class="form-note">El montaje será <strong>solo lectura</strong>, sin ejecución de archivos. Las credenciales quedan protegidas localmente con permisos exclusivos de root y nunca aparecen en auditoría.</p>
+              <div class="form-actions"><button class="secondary-button" id="cancelNasMount" type="button">Cancelar</button><button class="primary-button" id="nasMountSubmit" type="submit">Configurar y comprobar</button></div>
+            </form>
+          </article>
+
+          <div class="atlas-nas-metrics" aria-label="Resumen del almacenamiento NAS">
+            <article class="atlas-nas-metric"><span>NAS físicos</span><strong id="nasPhysicalCount">0</strong><small>equipos activos</small></article>
+            <article class="atlas-nas-metric"><span>Recursos</span><strong id="nasResourceCount">0</strong><small>destinos activos</small></article>
+            <article class="atlas-nas-metric"><span>En línea</span><strong id="nasOnlineCount">0</strong><small>recursos disponibles</small></article>
+            <article class="atlas-nas-metric"><span>Capacidad observada</span><strong id="nasCapacityTotal">Sin datos</strong><small>sin sumar el mismo NAS dos veces</small></article>
+          </div>
+
+          <article class="panel atlas-nas-directory">
+            <div class="atlas-nas-toolbar">
+              <label class="atlas-nas-search">
+                <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg>
+                <input id="nasSearch" type="search" placeholder="Buscar NAS, persona, recurso, IP o agencia..." aria-label="Buscar NAS o recurso">
+              </label>
+              <select id="nasAgencyFilter" aria-label="Filtrar NAS por agencia"><option value="">Todas las agencias</option></select>
+              <div class="atlas-nas-toolbar-actions">
+                <button class="secondary-button compact" id="expandAllNas" type="button">Expandir todos</button>
+                <button class="secondary-button compact" id="collapseAllNas" type="button">Colapsar todos</button>
+              </div>
+            </div>
+            <div class="nas-lifecycle-tabs" role="tablist" aria-label="Estado de NAS"><button type="button" role="tab" data-nas-status="ACTIVE" aria-selected="true">Activos</button><button type="button" role="tab" data-nas-status="RETIRED" aria-selected="false">Dados de baja</button><button type="button" role="tab" data-nas-status="ALL" aria-selected="false">Todos</button></div>
+            <div class="atlas-nas-grid" id="nasRows"></div>
+          </article>
+
+          <dialog class="atlas-nas-detail-overlay hidden" id="nasDetailOverlay" aria-labelledby="nasDetailName">
+            <div class="atlas-nas-detail">
+              <header class="atlas-nas-detail-header">
+                <div class="atlas-nas-detail-identity">
+                  <span class="atlas-nas-avatar" id="nasDetailAvatar">NA</span>
+                  <div>
+                    <p class="eyebrow">RECURSO DE RESPALDO</p>
+                    <h2 id="nasDetailName">Seleccione un recurso</h2>
+                    <p id="nasDetailPath">Sin destino seleccionado</p>
+                  </div>
+                </div>
+                <button class="atlas-nas-close" id="nasDetailClose" type="button" aria-label="Cerrar detalle" autofocus><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+              </header>
+
+              <div class="atlas-nas-detail-body">
+              <div class="atlas-nas-detail-actions" aria-label="Acciones del recurso">
+                <button class="atlas-nas-action active" id="nasDetailExplore" type="button"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-folder"></use></svg><strong>Explorar</strong><small>Carpetas y archivos</small></button>
+                <button class="atlas-nas-action" id="nasDetailEdit" type="button" data-admin-only><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-pencil"></use></svg><strong>Editar</strong><small>Datos del recurso</small></button>
+                <button class="atlas-nas-action" id="nasDetailMount" type="button" data-admin-only><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrows-up-down"></use></svg><strong>Montaje</strong><small>Solo lectura</small></button>
+                <button class="atlas-nas-action hidden" id="nasDetailCase" type="button"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-briefcase-2"></use></svg><strong>Expediente</strong><small>Preparar seguimiento</small></button>
+                <button class="atlas-nas-action" id="probeNasButton" type="button" data-admin-only><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-radar"></use></svg><strong>Sondear</strong><small>Comprobar ahora</small></button>
+              </div>
+
+              <div class="atlas-nas-detail-facts">
+                <article><span>Acceso desde el servidor ATLAS</span><strong id="nasDetailStatus">Sin sondeo</strong></article>
+                <article><span>Capacidad</span><strong id="nasDetailCapacity">Sin datos</strong></article>
+                <article><span>Última comprobación</span><strong id="nasDetailProbe">Sin datos</strong></article>
+              </div>
+
+              <section class="atlas-nas-explorer">
+                <div class="atlas-nas-explorer-heading">
+                  <div><h3>Explorador de respaldos</h3><p id="nasBrowserStatus" role="status">Seleccione un recurso de respaldo disponible.</p></div>
+                  <span class="atlas-nas-readonly">Solo lectura</span>
+                  <select class="hidden" id="nasExplorerSelect" aria-label="Seleccionar recurso de respaldo"><option value="">Seleccione un recurso de respaldo</option></select>
+                </div>
+                <div class="nas-pathbar"><button class="icon-button" id="nasUpButton" type="button" aria-label="Subir una carpeta"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-arrow-up"></use></svg></button><span id="nasCurrentPath">/</span></div>
+                <div class="atlas-nas-file-grid" id="nasExplorerRows" aria-busy="false"></div>
+                <div class="pagination atlas-nas-pagination">
+                  <span id="nasExplorerPaginationLabel">Página 1</span>
+                  <div>
+                    <button id="nasExplorerPreviousPage" type="button">Anterior</button>
+                    <button id="nasExplorerNextPage" type="button">Siguiente</button>
+                  </div>
+                </div>
+                <p class="truth-note">Solo se muestran metadatos. No existen acciones de escritura, borrado ni descarga.</p>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view" id="view-network">
+          <div class="section-heading network-heading">
+            <div>
+              <p class="eyebrow">DESCUBRIMIENTO DE RED AUTORIZADO</p>
+              <h2>Escáner de red</h2>
+              <p>Explora las redes de las agencias desde el servidor y consulta sus dispositivos.</p>
+            </div>
+            <button class="secondary-button compact" id="scanAllNetworks" type="button" data-admin-only>Escanear todas las redes</button>
+          </div>
+
+          <article class="panel network-engine-panel">
+            <div class="network-engine-state">
+              <span class="pulse-dot" id="networkEngineDot"></span>
+              <div>
+                <strong id="networkEngineState">Comprobando motor...</strong>
+                <small id="networkEngineMeta">Nmap restringido a los alcances autorizados</small>
+              </div>
+            </div>
+            <small>Una dirección sin respuesta puede estar filtrada; no acredita que esté libre.</small>
+          </article>
+
+          <article class="panel network-scanner-controls">
+            <form id="networkScanForm">
+              <label class="field"><span>Red / agencia</span><select id="networkScopeFilter" aria-label="Filtrar por red"><option value="">Todas las redes</option></select></label>
+              <label class="field"><span>Desde IP</span><input id="networkRangeStart" type="text" inputmode="decimal" maxlength="15" placeholder="Selecciona una red" disabled></label>
+              <label class="field"><span>Hasta IP</span><input id="networkRangeEnd" type="text" inputmode="decimal" maxlength="15" placeholder="Selecciona una red" disabled></label>
+              <button class="primary-button" id="networkScanStart" type="submit" data-admin-only>Escanear</button>
+              <button class="secondary-button" id="networkScanStop" type="button" data-admin-only disabled>Detener</button>
+            </form>
+            <div id="networkScanProgress" class="network-scanner-progress" role="status" aria-live="polite">Selecciona una red o consulta el inventario observado.</div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-heading network-assets-heading">
+              <div>
+                <h3 id="networkResultsTitle">Dispositivos observados</h3>
+                <p id="networkResultsSubtitle">Resultados con fecha y fuente de identificación.</p>
+              </div>
+              <div class="network-filters">
+                <input id="networkSearch" type="search" placeholder="Buscar IP, nombre, MAC..." aria-label="Buscar dispositivo de red">
+                <select id="networkPresenceFilter" aria-label="Filtrar por estado"><option value="ALL">Todos</option><option value="CURRENT">Respuesta reciente</option><option value="MISSING">Sin respuesta reciente</option><option value="UNKNOWN">Por identificar</option></select>
+                <button class="secondary-button compact" type="button" id="networkExport">Exportar CSV</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table network-assets-table">
+                  <thead><tr><th><button type="button" data-network-sort="state">Estado</button></th><th><button type="button" data-network-sort="ip">Dirección IP</button></th><th><button type="button" data-network-sort="name">Nombre</button></th><th>Dirección MAC</th><th><button type="button" data-network-sort="vendor">Fabricante</button></th><th><button type="button" data-network-sort="latency">Respuesta</button></th><th>Servicios</th><th>Tipo</th><th>Acciones</th></tr></thead>
+                <tbody id="networkAssetRows"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <span id="networkPaginationLabel">Pagina 1</span>
+              <div>
+                <button id="networkPreviousPage" type="button">Anterior</button>
+                <button id="networkNextPage" type="button">Siguiente</button>
+              </div>
+            </div>
+          </article>
+          <details class="panel network-administration"><summary>Programación y redes registradas</summary><div class="network-scope-grid" id="networkScopeCards"></div></details>
+          <details class="panel network-administration"><summary>Historial de comprobaciones</summary><div id="networkAutomationWorkspace"></div></details>
+        </section>
+
+        <section class="view" id="view-security">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">POSTURA DE CIBERSEGURIDAD</p>
+              <h2>Controles y cumplimiento</h2>
+              <p>Configuración defensiva y eventos de seguridad reportados por los agentes.</p>
+            </div>
+          </div>
+
+          <div class="kpi-grid security-kpi-grid">
+            <article class="kpi-card">
+              <span class="kpi-label">Cobertura de postura</span>
+              <strong class="kpi-value" id="securityCoverage">—</strong>
+              <span class="kpi-meta" id="securityCoverageMeta">Esperando telemetría</span>
+            </article>
+            <article class="kpi-card">
+              <span class="kpi-label">Firewall protegido</span>
+              <strong class="kpi-value" id="securityFirewall">—</strong>
+              <span class="kpi-meta">Todos los perfiles activos</span>
+            </article>
+            <article class="kpi-card">
+              <span class="kpi-label">BitLocker en C:</span>
+              <strong class="kpi-value" id="securityBitLocker">—</strong>
+              <span class="kpi-meta">Protección de la unidad del sistema</span>
+            </article>
+            <article class="kpi-card warning-card">
+              <span class="kpi-label">Fallos de acceso · 24 h</span>
+              <strong class="kpi-value" id="securityFailedLogons">—</strong>
+              <span class="kpi-meta" id="securityRemoteMeta">Incluye accesos remotos y locales</span>
+            </article>
+            <article class="kpi-card critical-card">
+              <span class="kpi-label">Eventos críticos · 24 h</span>
+              <strong class="kpi-value" id="securityCriticalEvents">—</strong>
+              <span class="kpi-meta" id="securityHighMeta">Eventos de severidad alta</span>
+            </article>
+          </div>
+
+          <div class="overview-grid security-panels">
+            <article class="panel span-three">
+              <div class="panel-heading">
+                <div>
+                  <h3>Controles por equipo</h3>
+                  <p>Los estados desconocidos no se cuentan como protegidos.</p>
+                </div>
+                <div class="table-sort-controls" aria-label="Ordenar postura de seguridad">
+                  <select id="securityDeviceSortBy" aria-label="Ordenar postura por">
+                    <option value="machine">Equipo</option>
+                    <option value="agency">Agencia</option>
+                    <option value="captured">Último reporte</option>
+                    <option value="attention">Mayor atención</option>
+                  </select>
+                  <button class="secondary-button compact sort-direction" id="securityDeviceSortDirection" type="button" aria-label="Cambiar dirección">A → Z</button>
+                </div>
+              </div>
+              <div class="table-wrap security-table-wrap">
+                <table class="data-table security-table security-device-table">
+                  <thead><tr>
+                    <th>Equipo / agencia</th><th>Última postura</th><th>Firewall</th>
+                    <th>BitLocker C:</th><th>Secure Boot</th><th>TPM</th>
+                    <th>SMBv1</th><th>RDP</th><th>Reinicio</th>
+                  </tr></thead>
+                  <tbody id="securityDeviceRows"></tbody>
+                </table>
+              </div>
+              <div class="pagination security-pagination">
+                <span id="securityDevicePaginationLabel">Página 1</span>
+                <div>
+                  <button id="securityDevicePreviousPage" type="button">Anterior</button>
+                  <button id="securityDeviceNextPage" type="button">Siguiente</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel span-three">
+              <div class="panel-heading">
+                <div>
+                  <h3 id="securityEventHeading">Bitácoras de seguridad por equipo</h3>
+                  <p id="securityEventDescription">Autenticación, sesiones, cambios sensibles, Defender y estado del sistema.</p>
+                </div>
+                <div class="security-log-controls">
+                  <select id="securityEventDeviceFilter" aria-label="Filtrar bitácoras por equipo"><option value="">Todos los equipos</option></select>
+                  <select id="securityEventSortBy" aria-label="Ordenar bitácoras por">
+                    <option value="date">Fecha</option><option value="machine">Equipo</option><option value="severity">Severidad</option><option value="category">Evento</option><option value="outcome">Resultado</option>
+                  </select>
+                  <button class="secondary-button compact sort-direction" id="securityEventSortDirection" type="button" aria-label="Cambiar dirección">Más reciente</button>
+                </div>
+              </div>
+              <div class="table-wrap security-table-wrap security-event-table">
+                <table class="data-table security-table security-event-data-table">
+                  <thead><tr>
+                    <th>Fecha</th><th>Severidad</th><th>Equipo</th><th>Evento</th>
+                    <th>Resultado</th><th>Usuario / objetivo</th><th>Origen / detalle</th>
+                  </tr></thead>
+                  <tbody id="securityEventRows"></tbody>
+                </table>
+              </div>
+              <div class="pagination security-pagination">
+                <span id="securityEventPaginationLabel">Página 1</span>
+                <div>
+                  <button id="securityEventPreviousPage" type="button">Anterior</button>
+                  <button id="securityEventNextPage" type="button">Siguiente</button>
+                </div>
+              </div>
+              <div class="truth-note security-truth-note">
+                ATLAS registra metadatos de seguridad, no contraseñas ni contenido. La correlación CVE con NVD/CISA se incorporará en la siguiente fase y no se muestran vulnerabilidades simuladas.
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-software">
+          <div class="section-heading"><div><p class="eyebrow">INVENTARIO LÓGICO</p><h2>Control de software</h2><p>Aplicaciones, autorizaciones, licencias y seguimiento de pendientes.</p></div></div>
+          <div id="softwareWorkspace"></div>
+        </section>
+        <section class="view" id="view-governance">
+          <div class="section-heading governance-heading">
+            <div>
+              <p class="eyebrow">GOBIERNO Y CUMPLIMIENTO</p>
+              <h2>Políticas y procedimientos</h2>
+              <p>Documentos oficiales, vigencias, responsables y versiones verificables.</p>
+            </div>
+            <button class="primary-button" id="governanceNewDocument"
+                    type="button" data-governance-manage><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-plus"></use></svg>Nuevo documento</button>
+          </div>
+
+          <article class="governance-hero">
+            <div class="governance-hero-mark" aria-hidden="true">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-books"></use></svg><i></i>
+            </div>
+            <div class="governance-hero-copy">
+              <span class="governance-assurance">CONTROL DOCUMENTAL ACTIVO</span>
+              <h3>Una fuente oficial para saber qué aplica y cómo actuar</h3>
+              <p>La política principal organiza el marco institucional. Cada procedimiento conserva su detalle, responsable, vigencia e historial sin sobrescribir evidencia.</p>
+            </div>
+            <div class="governance-hero-proof">
+              <span>Integridad</span>
+              <strong>SHA-256</strong>
+              <small>Cada versión registrada</small>
+            </div>
+          </article>
+
+          <div class="governance-kpi-grid">
+            <article class="governance-kpi-card approved">
+              <span>Aprobados</span><strong id="governanceApprovedCount">0</strong>
+              <small>Documentos aprobados</small>
+            </article>
+            <article class="governance-kpi-card review">
+              <span>Próximos a revisión</span><strong id="governanceReviewCount">0</strong>
+              <small>Dentro de los próximos 30 días</small>
+            </article>
+            <article class="governance-kpi-card draft">
+              <span>En preparación</span><strong id="governanceDraftCount">0</strong>
+              <small>Borradores y revisiones</small>
+            </article>
+            <article class="governance-kpi-card library">
+              <span>Versiones preservadas</span><strong id="governanceVersionCount">0</strong>
+              <small>Archivos con huella verificable</small>
+            </article>
+          </div>
+
+          <article class="panel governance-toolbar">
+            <label class="governance-search-field">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg>
+              <input id="governanceSearch" type="search" aria-label="Buscar documentos por código, título o responsable"
+                     placeholder="Buscar código, título o responsable…">
+            </label>
+            <select id="governanceTypeFilter" aria-label="Filtrar por tipo">
+              <option value="">Todos los tipos</option>
+              <option value="MASTER_POLICY">Política principal</option>
+              <option value="POLICY">Política</option>
+              <option value="PROCEDURE">Procedimiento</option>
+              <option value="STANDARD">Estándar</option>
+              <option value="GUIDE">Guía</option>
+              <option value="FORM">Formato</option>
+              <option value="ANNEX">Anexo</option>
+            </select>
+            <select id="governanceStatusFilter" aria-label="Filtrar por estado">
+              <option value="">Todos los estados</option>
+              <option value="APPROVED">Vigente</option>
+              <option value="IN_REVIEW">En revisión</option>
+              <option value="DRAFT">Borrador</option>
+              <option value="OBSOLETE">Obsoleto</option>
+            </select>
+            <button class="secondary-button compact" id="governanceClearFilters"
+                    type="button">Limpiar</button>
+          </article>
+
+          <article class="panel governance-form-panel hidden" id="governanceFormPanel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">FICHA DOCUMENTAL</p>
+                <h3 id="governanceFormTitle">Nuevo documento</h3>
+                <p>Los datos describen el documento; el archivo se incorpora como una versión independiente.</p>
+              </div>
+              <button class="icon-button" id="governanceFormClose"
+                      type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <form id="governanceForm" class="governance-form">
+              <input id="governanceDocumentId" type="hidden">
+              <div class="governance-form-grid">
+                <label><span>Código documental</span><input id="governanceCode" maxlength="64" placeholder="PSI-001" required></label>
+                <label><span>Tipo</span><select id="governanceType" required>
+                  <option value="MASTER_POLICY">Política principal</option>
+                  <option value="POLICY">Política</option>
+                  <option value="PROCEDURE">Procedimiento</option>
+                  <option value="STANDARD">Estándar</option>
+                  <option value="GUIDE">Guía</option>
+                  <option value="FORM">Formato</option>
+                  <option value="ANNEX">Anexo</option>
+                </select></label>
+                <label class="span-two"><span>Título oficial</span><input id="governanceTitle" maxlength="220" required></label>
+                <label><span>Responsable</span><input id="governanceOwner" maxlength="160" placeholder="Nombre o función responsable" required></label>
+                <label><span>Documento superior · herencia</span><select id="governanceParent"><option value="">Sin documento superior</option></select><small>Seleccione solo el padre directo. ATLAS calculará la cadena padre → hijo → nieto.</small></label>
+                <label class="span-two"><span>Resumen ejecutivo</span><textarea id="governanceSummary" maxlength="4000" rows="3" required></textarea></label>
+                <label class="span-two"><span>Objetivo</span><textarea id="governanceObjective" maxlength="8000" rows="4"></textarea></label>
+                <label class="span-two"><span>Alcance</span><textarea id="governanceScope" maxlength="8000" rows="4"></textarea></label>
+                <label class="span-two"><span>Otros documentos relacionados</span><select id="governanceRelated" multiple size="5"></select><small>Vínculos complementarios; no sustituyen la herencia del documento superior. Puede seleccionar varios con Ctrl + clic.</small></label>
+              </div>
+              <div class="governance-form-actions">
+                <button class="secondary-button" id="governanceFormCancel" type="button">Cancelar</button>
+                <button class="primary-button" id="governanceSave" type="submit">Crear documento</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel governance-version-panel hidden" id="governanceVersionPanel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">VERSIÓN CONTROLADA</p>
+                <h3 id="governanceVersionTitle">Incorporar archivo</h3>
+                <p>Al subir una versión nueva, el documento vuelve a borrador hasta ser revisado y aprobado.</p>
+              </div>
+              <button class="icon-button" id="governanceVersionClose"
+                      type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <div class="governance-version-form">
+              <label><span>Versión</span><input id="governanceVersionLabel" maxlength="32" placeholder="1.0" required></label>
+              <label class="span-two"><span>Resumen de cambios</span><input id="governanceChangeSummary" maxlength="2000" placeholder="Primera emisión o cambios principales" required></label>
+              <label class="governance-file-field">
+                <span id="governanceFileLabel">Seleccionar PDF, Word, Excel o PowerPoint</span>
+                <input id="governanceFile" type="file" accept=".pdf,.docx,.xlsx,.pptx,.odt,.ods,.odp,.txt,.csv">
+              </label>
+              <div class="governance-form-actions">
+                <button class="secondary-button" id="governanceVersionCancel" type="button">Cancelar</button>
+                <button class="primary-button" id="governanceVersionUpload" type="button">Registrar versión</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel governance-detail-panel hidden" id="governanceDetailPanel">
+            <div class="governance-detail-heading">
+              <div>
+                <span class="governance-document-code" id="governanceDetailCode">—</span>
+                <h3 id="governanceDetailTitle">Detalle documental</h3>
+                <p id="governanceDetailMeta">—</p>
+              </div>
+              <div class="governance-detail-actions">
+                <button class="secondary-button compact" id="governanceAddVersion" type="button" data-governance-manage><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-plus"></use></svg>Versión</button>
+                <button class="secondary-button compact" id="governanceEdit" type="button" data-governance-manage>Editar ficha</button>
+                <button class="secondary-button compact hidden" id="governanceEditDescription" type="button" data-governance-manage><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-edit"></use></svg>Editar descripción</button>
+                <button class="secondary-button compact" id="governanceReview" type="button" data-governance-manage>Enviar a revisión</button>
+                <button class="secondary-button compact hidden" id="governanceReturnDraft" type="button" data-governance-manage>Volver a borrador</button>
+                <button class="secondary-button compact hidden" id="governanceRequestCorrection" type="button" data-governance-approve>Solicitar corrección</button>
+                <button class="primary-button compact hidden" id="governanceApprove" type="button" data-governance-approve>Aprobar</button>
+                <button class="danger-button compact" id="governanceObsolete" type="button" data-governance-manage>Marcar obsoleto</button>
+                <button class="icon-button" id="governanceDetailClose" type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+              </div>
+            </div>
+            <form class="governance-description-box hidden" id="governanceDescriptionForm">
+              <div class="governance-description-intro">
+                <strong>Corrección descriptiva controlada</strong>
+                <p>Actualiza únicamente la ficha visible en ATLAS. El PDF oficial, su versión, huella, estado, aprobación y jerarquía permanecerán intactos.</p>
+              </div>
+              <label class="span-two"><span>Resumen ejecutivo</span><textarea id="governanceDescriptionSummary" maxlength="4000" rows="3" required></textarea></label>
+              <label><span>Objetivo</span><textarea id="governanceDescriptionObjective" maxlength="8000" rows="4"></textarea></label>
+              <label><span>Alcance</span><textarea id="governanceDescriptionScope" maxlength="8000" rows="4"></textarea></label>
+              <div class="governance-form-actions span-two">
+                <button class="secondary-button compact" id="governanceDescriptionCancel" type="button">Cancelar</button>
+                <button class="primary-button compact" id="governanceDescriptionSave" type="submit">Guardar descripción</button>
+              </div>
+            </form>
+            <div class="governance-approval-box hidden" id="governanceApprovalBox">
+              <div class="governance-approval-attestation"><strong>Aprobación formal</strong><p>“He leído y apruebo este procedimiento como oficial.”</p></div>
+              <div class="governance-approver-proof"><span>Aprobador autenticado</span><strong id="governanceApproverName">—</strong></div>
+              <label><span>Vigente desde</span><input id="governanceEffectiveDate" type="date"></label>
+              <label><span>Próxima revisión</span><input id="governanceNextReviewDate" type="date"></label>
+              <button class="primary-button compact" id="governanceConfirmApproval" type="button">Confirmar aprobación</button>
+              <button class="secondary-button compact" id="governanceCancelApproval" type="button">Cancelar</button>
+            </div>
+            <div id="governanceDetailBody"></div>
+          </article>
+
+          <div class="governance-section-heading">
+            <div><p class="eyebrow">BIBLIOTECA CONTROLADA</p><h3>Mapa documental</h3></div>
+            <span id="governanceResultLabel">0 documentos</span>
+          </div>
+          <div class="governance-document-grid" id="governanceDocumentGrid"></div>
+        </section>
+
+        <section class="view" id="view-training">
+          <div class="section-heading training-heading">
+            <div>
+              <p class="eyebrow">CONCIENTIZACIÓN Y EVIDENCIA</p>
+              <h2>Programa de capacitaciones</h2>
+              <p>Ciclos independientes, sesiones reutilizables y asistencia verificable.</p>
+            </div>
+            <div class="training-heading-actions" data-training-manage>
+              <button class="secondary-button" id="trainingNewTopic" type="button"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-plus"></use></svg>Tema</button>
+              <button class="primary-button" id="trainingNewCycle" type="button"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-plus"></use></svg>Nuevo ciclo</button>
+            </div>
+          </div>
+
+          <article class="panel training-cycle-toolbar">
+            <div>
+              <label for="trainingCycleSelect">Ciclo consultado</label>
+              <select id="trainingCycleSelect" aria-label="Seleccionar ciclo de capacitación"></select>
+            </div>
+            <div class="training-cycle-actions" data-training-manage>
+              <button class="secondary-button compact" id="trainingEditCycle" type="button">Editar ciclo</button>
+              <button class="secondary-button compact" id="trainingCloneCycle" type="button">Crear siguiente ciclo</button>
+            </div>
+          </article>
+
+          <div class="training-kpi-grid">
+            <article class="training-kpi-card accent">
+              <span>Sesiones del ciclo</span><strong id="trainingSessionCount">0</strong>
+              <small id="trainingCycleRange">Sin ciclo seleccionado</small>
+            </article>
+            <article class="training-kpi-card success">
+              <span>Realizadas</span><strong id="trainingCompletedCount">0</strong>
+              <small id="trainingCompletionRate">0% de avance</small>
+            </article>
+            <article class="training-kpi-card warning">
+              <span>Atrasadas</span><strong id="trainingOverdueCount">0</strong>
+              <small>Fecha vencida sin completar</small>
+            </article>
+            <article class="training-kpi-card neutral">
+              <span>Respuestas</span><strong id="trainingAttendanceRate">0</strong>
+              <small id="trainingAttendanceMeta">Sin registros</small>
+            </article>
+          </div>
+
+          <article class="panel training-cycle-summary">
+            <div>
+              <span class="training-cycle-state" id="trainingCycleStatus">Sin ciclo</span>
+              <h3 id="trainingCycleName">Seleccione un ciclo</h3>
+              <p id="trainingCycleNotes">El calendario y las asistencias se mantienen separados por ciclo.</p>
+            </div>
+            <div class="training-progress" aria-label="Avance del ciclo">
+              <div><span>Avance</span><strong id="trainingProgressLabel">0%</strong></div>
+              <span class="training-progress-track"><i id="trainingProgressBar"></i></span>
+            </div>
+          </article>
+
+          <article class="panel training-session-panel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">CALENDARIO DEL CICLO</p>
+                <h3>Sesiones planificadas</h3>
+                <p>Cada sesión conserva su propia fecha, estado, material y asistencia.</p>
+              </div>
+              <button class="primary-button compact" id="trainingNewSession"
+                      type="button" data-training-manage><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-plus"></use></svg>Añadir sesión</button>
+            </div>
+            <div class="training-session-grid" id="trainingSessionGrid"></div>
+          </article>
+
+          <article class="panel training-form-panel hidden" id="trainingCycleFormPanel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">CICLO ANUAL</p><h3 id="trainingCycleFormTitle">Nuevo ciclo</h3></div>
+              <button class="icon-button" id="trainingCycleCancel" type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <form id="trainingCycleForm" class="training-form">
+              <input id="trainingCycleMode" type="hidden" value="create">
+              <input id="trainingCycleId" type="hidden">
+              <div class="training-form-grid">
+                <label class="span-two"><span>Nombre del ciclo</span><input id="trainingCycleFormName" maxlength="120" placeholder="Ciclo 2027–2028" required></label>
+                <label><span>Fecha de inicio</span><input id="trainingCycleStart" type="date" required></label>
+                <label><span>Fecha de finalización</span><input id="trainingCycleEnd" type="date" required></label>
+                <label><span>Estado</span><select id="trainingCycleFormStatus" required>
+                  <option value="DRAFT">Borrador</option><option value="ACTIVE">Activo</option>
+                  <option value="CLOSED">Cerrado</option><option value="ARCHIVED">Archivado</option>
+                </select></label>
+                <label class="span-three"><span>Notas</span><textarea id="trainingCycleFormNotes" maxlength="4000" rows="3"></textarea></label>
+              </div>
+              <p class="training-clone-note hidden" id="trainingCloneNote">Se copiarán los temas, fechas relativas y materiales. Las asistencias y evidencias comenzarán vacías.</p>
+              <div class="training-form-actions">
+                <button class="secondary-button" id="trainingCycleCancelSecondary" type="button">Cancelar</button>
+                <button class="primary-button" id="trainingCycleSave" type="submit">Guardar ciclo</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel training-form-panel hidden" id="trainingSessionFormPanel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">SESIÓN DEL CICLO</p><h3 id="trainingSessionFormTitle">Nueva sesión</h3></div>
+              <button class="icon-button" id="trainingSessionCancel" type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <form id="trainingSessionForm" class="training-form">
+              <input id="trainingSessionId" type="hidden">
+              <div class="training-form-grid">
+                <label><span>Tema reutilizable</span><select id="trainingSessionTopic" required></select></label>
+                <label><span>Orden</span><input id="trainingSessionSequence" type="number" min="1" max="999" required></label>
+                <label><span>Fecha</span><input id="trainingSessionDate" type="date" required></label>
+                <label><span>Hora opcional</span><input id="trainingSessionTime" type="time"></label>
+                <label><span>Estado</span><select id="trainingSessionStatus" required>
+                  <option value="DRAFT">Borrador</option><option value="PLANNED">Programada</option>
+                  <option value="COMPLETED">Realizada</option><option value="RESCHEDULED">Reprogramada</option>
+                  <option value="CANCELLED">Cancelada</option>
+                </select></label>
+                <label class="span-two"><span>Título utilizado en este ciclo</span><input id="trainingSessionTitle" maxlength="180" required></label>
+                <label><span>Categoría</span><input id="trainingSessionCategory" maxlength="64" required></label>
+                <label><span>Modalidad</span><select id="trainingSessionModality" required>
+                  <option value="VIRTUAL">Virtual</option><option value="IN_PERSON">Presencial</option><option value="HYBRID">Híbrida</option>
+                </select></label>
+                <label><span>Duración (minutos)</span><input id="trainingSessionDuration" type="number" min="5" max="480" required></label>
+                <label><span>Responsable / instructor</span><input id="trainingSessionTrainer" maxlength="160"></label>
+                <label class="span-three"><span>Enfoque de ciberseguridad</span><textarea id="trainingSessionFocus" maxlength="4000" rows="3" required></textarea></label>
+                <label><span>Referencia interna del material</span><input id="trainingSessionMaterial" maxlength="500" placeholder="Nombre o código opcional"></label>
+                <label class="span-two"><span>Enlace de la presentación</span><input id="trainingSessionPresentationUrl" type="url" maxlength="1000" placeholder="https://..."></label>
+                <label class="span-two"><span>Enlace del formulario de asistencia</span><input id="trainingSessionFormUrl" type="url" maxlength="1000" placeholder="https://forms.gle/..."></label>
+                <label class="span-three"><span>Observaciones</span><textarea id="trainingSessionNotes" maxlength="4000" rows="3"></textarea></label>
+              </div>
+              <div class="training-form-actions">
+                <button class="secondary-button" id="trainingSessionCancelSecondary" type="button">Cancelar</button>
+                <button class="primary-button" id="trainingSessionSave" type="submit">Guardar sesión</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel training-attendance-panel hidden" id="trainingAttendancePanel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">EVIDENCIA DE ASISTENCIA</p>
+                <h3 id="trainingAttendanceTitle">Asistencia importada</h3>
+                <p id="trainingAttendanceSubtitle">Suba la exportación de Google Forms correspondiente a esta sesión.</p>
+              </div>
+              <button class="icon-button" id="trainingAttendanceClose" type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <div class="training-resource-links">
+              <a class="secondary-button hidden" id="trainingAttendanceFormLink" target="_blank" rel="noopener noreferrer">Abrir formulario de asistencia <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-external-link"></use></svg></a>
+              <a class="secondary-button hidden" id="trainingPresentationLink" target="_blank" rel="noopener noreferrer">Abrir presentación <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-external-link"></use></svg></a>
+              <span id="trainingResourceLinksEmpty">Esta sesión todavía no tiene enlaces asociados.</span>
+            </div>
+            <div class="training-import-box" data-training-manage>
+              <div>
+                <strong>Importar respuestas</strong>
+                <p>Excel (.xlsx) o CSV exportado desde Google Forms. Columnas requeridas: marca temporal, nombre completo, agencia y departamento.</p>
+              </div>
+              <label class="training-file-field">
+                <span id="trainingAttendanceFileLabel">Seleccionar archivo</span>
+                <input id="trainingAttendanceFile" type="file" accept=".xlsx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,text/csv">
+              </label>
+              <button class="primary-button" id="trainingAttendanceUpload" type="button">Procesar archivo</button>
+            </div>
+            <div class="training-import-summary" id="trainingAttendanceImportSummary"></div>
+            <div class="training-import-warnings hidden" id="trainingAttendanceWarnings"></div>
+            <div class="table-wrap">
+              <table class="data-table training-attendance-table">
+                <thead><tr><th>Participante</th><th>Agencia</th><th>Departamento</th><th>Respuesta registrada</th><th>Correo</th></tr></thead>
+                <tbody id="trainingAttendanceRows"></tbody>
+              </table>
+            </div>
+            <div class="training-import-history">
+              <div class="panel-heading"><div><h4>Historial de archivos</h4><p>Cada carga conserva nombre, fecha, resultado y huella SHA-256.</p></div></div>
+              <div id="trainingAttendanceImportRows"></div>
+            </div>
+          </article>
+
+          <div class="training-catalog-grid single">
+            <article class="panel training-catalog-panel">
+              <div class="panel-heading"><div><p class="eyebrow">CONTENIDO REUTILIZABLE</p><h3>Catálogo de temas</h3></div></div>
+              <div class="training-catalog-list" id="trainingTopicRows"></div>
+            </article>
+            <article class="panel training-catalog-panel">
+              <div class="panel-heading"><div><p class="eyebrow">FLUJO DE ASISTENCIA</p><h3>De Google Forms a ATLAS</h3></div></div>
+              <ol class="training-import-steps">
+                <li>Comparta el formulario enlazado en la sesión.</li>
+                <li>Descargue sus respuestas como Excel o CSV.</li>
+                <li>Suba el archivo; ATLAS validará y mostrará los asistentes.</li>
+                <li>Una nueva carga reemplaza la vista actual, pero conserva los archivos anteriores como evidencia.</li>
+              </ol>
+            </article>
+          </div>
+
+          <article class="panel training-form-panel hidden" id="trainingTopicFormPanel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">CATÁLOGO</p><h3 id="trainingTopicFormTitle">Nuevo tema</h3></div>
+              <button class="icon-button" id="trainingTopicCancel" type="button" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <form id="trainingTopicForm" class="training-form">
+              <input id="trainingTopicId" type="hidden">
+              <div class="training-form-grid">
+                <label><span>Código</span><input id="trainingTopicCode" maxlength="64" pattern="[A-Za-z0-9_]+" required></label>
+                <label class="span-two"><span>Título</span><input id="trainingTopicTitle" maxlength="180" required></label>
+                <label><span>Categoría</span><input id="trainingTopicCategory" maxlength="64" required></label>
+                <label><span>Duración predeterminada</span><input id="trainingTopicDuration" type="number" min="5" max="480" value="30" required></label>
+                <label><span>Modalidad predeterminada</span><select id="trainingTopicModality" required>
+                  <option value="VIRTUAL">Virtual</option><option value="IN_PERSON">Presencial</option><option value="HYBRID">Híbrida</option>
+                </select></label>
+                <label class="training-active-field"><input id="trainingTopicActive" type="checkbox" checked> Tema disponible</label>
+                <label class="span-three"><span>Enfoque de ciberseguridad</span><textarea id="trainingTopicFocus" maxlength="4000" rows="4" required></textarea></label>
+              </div>
+              <div class="training-form-actions">
+                <button class="secondary-button" id="trainingTopicCancelSecondary" type="button">Cancelar</button>
+                <button class="primary-button" type="submit">Guardar tema</button>
+              </div>
+            </form>
+          </article>
+
+        </section>
+
+        <section class="view" id="view-cases">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">GESTIÓN Y TRAZABILIDAD</p>
+              <h2>Centro de expedientes</h2>
+              <p>Incidentes, vulnerabilidades, excepciones y acciones con responsable e historial.</p>
+            </div>
+            <button class="primary-button" id="newCaseButton" type="button">
+              + Nuevo expediente
+            </button>
+          </div>
+
+          <div class="case-kpi-grid">
+            <article class="case-kpi-card">
+              <span>Total</span><strong id="caseTotal">0</strong>
+              <small>Expedientes registrados</small>
+            </article>
+            <article class="case-kpi-card accent">
+              <span>Abiertos</span><strong id="caseOpen">0</strong>
+              <small>En gestión activa</small>
+            </article>
+            <article class="case-kpi-card danger">
+              <span>Críticos</span><strong id="caseCritical">0</strong>
+              <small>Críticos sin cerrar</small>
+            </article>
+            <article class="case-kpi-card warning">
+              <span>Vencidos</span><strong id="caseOverdue">0</strong>
+              <small>Fuera de fecha objetivo</small>
+            </article>
+            <article class="case-kpi-card neutral">
+              <span>Sin asignar</span><strong id="caseUnassigned">0</strong>
+              <small>Requieren responsable</small>
+            </article>
+          </div>
+
+          <article class="panel case-list-panel">
+            <div class="case-toolbar">
+              <label class="case-search-field">
+                <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg>
+                <input id="caseSearch" type="search"
+                       placeholder="Buscar número, asunto o responsable…"
+                       aria-label="Buscar expedientes">
+              </label>
+              <select id="caseTypeFilter" aria-label="Filtrar por tipo">
+                <option value="">Todos los tipos</option>
+                <option value="INCIDENT">Incidente</option>
+                <option value="VULNERABILITY">Vulnerabilidad</option>
+                <option value="EXCEPTION">Excepción</option>
+                <option value="RESTORATION">Restauración</option>
+                <option value="ACCESS">Acceso</option>
+                <option value="SUPPLIER">Proveedor</option>
+                <option value="OTHER">Otro</option>
+              </select>
+              <select id="caseStatusFilter" aria-label="Filtrar por estado">
+                <option value="">Todos los estados</option>
+                <option value="NEW">Nuevo</option>
+                <option value="EVALUATING">En evaluación</option>
+                <option value="ASSIGNED">Asignado</option>
+                <option value="IN_TREATMENT">En tratamiento</option>
+                <option value="PENDING_VALIDATION">Pendiente de validar</option>
+                <option value="CLOSED">Cerrado</option>
+                <option value="ACCEPTED_EXCEPTION">Excepción aceptada</option>
+              </select>
+              <select id="caseSeverityFilter" aria-label="Filtrar por severidad">
+                <option value="">Toda severidad</option>
+                <option value="CRITICAL">Crítica</option>
+                <option value="HIGH">Alta</option>
+                <option value="MEDIUM">Media</option>
+                <option value="LOW">Baja</option>
+                <option value="INFO">Informativa</option>
+              </select>
+              <select id="caseAgencyFilter" aria-label="Filtrar por agencia">
+                <option value="">Todas las agencias</option>
+              </select>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table case-table">
+                <thead><tr>
+                  <th>Expediente</th><th>Tipo / asunto</th><th>Severidad</th>
+                  <th>Estado</th><th>Agencia</th><th>Responsable</th>
+                  <th>Actualizado</th><th></th>
+                </tr></thead>
+                <tbody id="caseRows"></tbody>
+              </table>
+            </div>
+            <div class="pagination">
+              <span id="casePaginationLabel">0 expedientes</span>
+              <div>
+                <button id="casePreviousPage" type="button">Anterior</button>
+                <button id="caseNextPage" type="button">Siguiente</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel case-editor hidden" id="caseEditorPanel">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">REGISTRO CONTROLADO</p>
+                <h3 id="caseFormTitle">Nuevo expediente</h3>
+                <p>Los cambios quedan asociados al usuario y conservados en la línea de tiempo.</p>
+              </div>
+              <button class="icon-button" id="caseCancel" type="button" aria-label="Cerrar formulario"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+            </div>
+            <form id="caseForm" class="case-form">
+              <input id="caseId" type="hidden">
+              <section class="case-evidence-panel hidden" id="caseEvidencePanel" aria-live="polite">
+                <div>
+                  <span class="case-evidence-icon" aria-hidden="true"><svg class="atlas-icon"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-file-description"></use></svg></span>
+                  <div>
+                    <strong>Evidencia preparada por ATLAS</strong>
+                    <p id="caseEvidenceSummary">Revise la información antes de crear el expediente.</p>
+                  </div>
+                </div>
+                <small>ATLAS no lo guardará ni ejecutará acciones hasta que usted confirme “Crear expediente”.</small>
+              </section>
+              <div class="case-form-grid">
+                <label><span>Tipo</span><select id="caseType" required>
+                  <option value="INCIDENT">Incidente</option>
+                  <option value="VULNERABILITY">Vulnerabilidad</option>
+                  <option value="EXCEPTION">Excepción</option>
+                  <option value="RESTORATION">Restauración</option>
+                  <option value="ACCESS">Acceso</option>
+                  <option value="SUPPLIER">Proveedor</option>
+                  <option value="OTHER">Otro</option>
+                </select></label>
+                <label class="span-two"><span>Asunto</span><input id="caseTitle" maxlength="180" required></label>
+                <label><span>Origen</span><input id="caseSource" maxlength="120" placeholder="Alerta, revisión, solicitud…"></label>
+                <label><span>Severidad</span><select id="caseSeverity" required>
+                  <option value="INFO">Informativa</option><option value="LOW">Baja</option>
+                  <option value="MEDIUM" selected>Media</option><option value="HIGH">Alta</option>
+                  <option value="CRITICAL">Crítica</option>
+                </select></label>
+                <label><span>Prioridad</span><select id="casePriority" required>
+                  <option value="LOW">Baja</option><option value="MEDIUM" selected>Media</option>
+                  <option value="HIGH">Alta</option><option value="URGENT">Urgente</option>
+                </select></label>
+                <label><span>Estado</span><select id="caseStatus">
+                  <option value="NEW">Nuevo</option><option value="EVALUATING">En evaluación</option>
+                  <option value="ASSIGNED">Asignado</option><option value="IN_TREATMENT">En tratamiento</option>
+                  <option value="PENDING_VALIDATION">Pendiente de validar</option><option value="CLOSED">Cerrado</option>
+                  <option value="ACCEPTED_EXCEPTION">Excepción aceptada</option>
+                </select></label>
+                <label><span>Agencia</span><select id="caseAgency"><option value="">Sin agencia</option></select></label>
+                <label><span>Asignado a</span><input id="caseAssignedTo" maxlength="160" placeholder="Usuario o responsable técnico"></label>
+                <label><span>Responsable institucional</span><input id="caseOwner" maxlength="160"></label>
+                <label><span>Fecha objetivo</span><input id="caseDueAt" type="datetime-local"></label>
+                <label class="span-two"><span>Activos relacionados</span><select id="caseDevices" multiple size="5"></select></label>
+                <label class="span-three"><span>Descripción</span><textarea id="caseDescription" maxlength="8000" rows="5" required></textarea></label>
+                <label class="span-three case-change-note"><span>Nota del cambio</span><textarea id="caseChangeNote" maxlength="2000" rows="2" placeholder="Motivo, decisión o resultado de esta actualización"></textarea></label>
+              </div>
+              <div class="case-form-actions">
+                <button class="secondary-button" id="caseCancelSecondary" type="button">Cancelar</button>
+                <button class="primary-button" id="caseSave" type="submit">Guardar expediente</button>
+              </div>
+            </form>
+          </article>
+
+          <article class="panel case-detail hidden" id="caseDetailPanel">
+            <div class="panel-heading case-detail-heading">
+              <div>
+                <p class="eyebrow" id="caseDetailMeta">EXPEDIENTE</p>
+                <h3 id="caseDetailTitle">Detalle</h3>
+              </div>
+              <div class="case-detail-actions">
+                <button class="secondary-button compact" id="caseEditButton" type="button">Editar</button>
+                <button class="icon-button" id="caseDetailClose" type="button" aria-label="Cerrar detalle"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+              </div>
+            </div>
+            <div id="caseDetailBody" class="case-detail-body"></div>
+            <form id="caseCommentForm" class="case-comment-form">
+              <label><span>Agregar seguimiento</span><textarea id="caseComment" maxlength="4000" rows="3" placeholder="Documente una decisión, evidencia o próximo paso…" required></textarea></label>
+              <button class="primary-button" id="caseCommentSubmit" type="submit">Registrar comentario</button>
+            </form>
+          </article>
+        </section>
+
+        <section class="view" id="view-reports"><div class="section-heading"><div><p class="eyebrow">EVIDENCIA Y ANÁLISIS</p><h2>Centro de reportes</h2><p>Informes conservados, verificables y programados.</p></div></div><div id="reportsWorkspace" class="portal-workspace"></div></section>
+
+        <section class="view audit-view" id="view-audit">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">TRAZABILIDAD Y EVIDENCIA</p>
+              <h2>Auditoría de ATLAS</h2>
+              <p>Quién hizo qué, sobre cuál objeto y cuándo; con prioridad en la vinculación de activos.</p>
+            </div>
+            <button class="secondary-button" id="auditRefresh" type="button">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-refresh"></use></svg>
+              Actualizar
+            </button>
+          </div>
+          <nav class="audit-tabs" aria-label="Secciones de auditoría">
+ <button type="button" data-audit-tab="summary" aria-current="page">Resumen</button>
+ <button type="button" data-audit-tab="enrollments">Vinculaciones</button>
+ <button type="button" data-audit-tab="events">Actividad</button>
+ <button type="button" data-audit-tab="reports">Informes</button>
+</nav><p id="auditStatus" class="form-note" role="status" aria-live="polite"></p>
+<div data-audit-panel="summary"><div class="audit-assurance">
+            <div class="audit-assurance-icon"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-shield-check"></use></svg></div>
+            <div>
+              <strong>Registro de sólo lectura</strong>
+              <p>La consulta no permite editar ni eliminar eventos. Los tokens, credenciales y secretos permanecen protegidos.</p>
+            </div>
+          </div>
+
+          <div class="audit-kpi-grid">
+            <button type="button" class="kpi-card audit-kpi" data-audit-metric="all"><span class="kpi-label">Eventos conservados</span><strong class="kpi-value" id="auditTotalEvents">—</strong><small class="kpi-meta">Histórico disponible</small></button>
+            <button type="button" class="kpi-card audit-kpi" data-audit-metric="recent"><span class="kpi-label">Últimas 24 horas</span><strong class="kpi-value" id="auditEvents24h">—</strong><small class="kpi-meta">Acciones registradas</small></button>
+            <button type="button" class="kpi-card audit-kpi warning" data-audit-metric="failed"><span class="kpi-label">Accesos rechazados</span><strong class="kpi-value" id="auditFailedAccess">—</strong><small class="kpi-meta">Durante las últimas 24 horas</small></button>
+            <article class="kpi-card audit-kpi"><span class="kpi-label">Identidades activas</span><strong class="kpi-value" id="auditDistinctActors">—</strong><small class="kpi-meta">Con actividad en 30 días</small></article>
+            <article class="kpi-card audit-kpi"><span class="kpi-label">Instaladores vigentes</span><strong class="kpi-value" id="auditActiveTokens">—</strong><small class="kpi-meta">Emitidos y aún no consumidos</small></article>
+          </div>
+<div class="audit-summary-links">
+ <button type="button" data-audit-metric="enrollments"><span>Vinculaciones conservadas</span><strong id="auditEnrollmentTotal">—</strong><small>Ver equipos y emisores</small></button>
+ <button type="button" data-audit-metric="unavailable"><span>Histórico sin emisor</span><strong id="auditEnrollmentUnknown">—</strong><small>Ver límites de atribución</small></button>
+</div>
+<article class="panel audit-scope"><h3>Qué puedes comprobar</h3><p>Las acciones registradas en accesos, vinculaciones, activos, NAS, redes, respaldos, documentos, expedientes, capacitaciones y actualizaciones. Los detalles muestran los datos conservados al realizar la acción.</p><p>Los eventos anteriores mantienen sus referencias originales. Un nombre que no se conservó en ese momento no se reconstruye con datos actuales. La telemetría de seguridad de Windows continúa en el apartado de Seguridad.</p><button class="primary-button" type="button" data-audit-tab="enrollments">Consultar vinculaciones</button></article>
+          </div><article class="panel audit-priority-panel hidden" data-audit-panel="enrollments">
+            <div class="panel-heading audit-panel-heading">
+              <div>
+                <p class="eyebrow">PRIORIDAD DE CONTROL</p>
+                <h3>Vinculación de activos por instalador</h3>
+                <p>Relaciona el instalador emitido por un usuario autenticado con el equipo que utilizó su autorización de un solo uso.</p>
+              </div>
+              <button class="secondary-button compact" id="auditEnrollmentExport" type="button">
+                <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-download"></use></svg>
+                Exportar CSV
+              </button>
+            </div>
+            <div class="audit-attribution-note">
+              <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-info-circle"></use></svg>
+              <span><strong>Atribución comprobable:</strong> quién emitió el instalador y qué activo lo consumió. La identidad de quien ejecutó físicamente el EXE no se afirma sin evidencia adicional.</span>
+            </div>
+            <div class="filter-bar audit-filter-bar">
+              <label class="search-field"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg><input id="auditEnrollmentSearch" type="search" placeholder="Activo, agencia o emisor…" aria-label="Buscar vinculaciones"></label>
+              <select id="auditEnrollmentAgency" aria-label="Filtrar vinculaciones por agencia"><option value="">Todas las agencias</option></select>
+              <select id="auditEnrollmentAttribution" aria-label="Filtrar por atribución">
+                <option value="">Toda atribución</option>
+                <option value="CONFIRMED">Usuario autenticado</option>
+                <option value="SYSTEM">Emisión de sistema</option>
+                <option value="UNAVAILABLE">Histórico sin atribución</option>
+              </select>
+            </div>
+            <div class="audit-date-bar"><label>Desde<input type="date" data-audit-date="from" data-audit-kind="enrollments"></label><label>Hasta<input type="date" data-audit-date="to" data-audit-kind="enrollments"></label><button type="button" class="secondary-button compact" data-audit-dates="enrollments">Aplicar fechas</button><button type="button" class="secondary-button compact" data-audit-clear="enrollments">Limpiar filtros</button><small>Fechas en la zona horaria de este navegador.</small></div><div class="table-wrap">
+              <table class="audit-enrollment-table data-table">
+                <thead><tr><th>Activo vinculado</th><th>Instalador emitido por</th><th>Emisión</th><th>Vinculación</th><th>Versiones</th><th>Atribución</th></tr></thead>
+                <tbody id="auditEnrollmentRows"><tr class="empty-row"><td colspan="6">Consultando vinculaciones…</td></tr></tbody>
+              </table>
+            </div>
+            <div class="pagination"><span id="auditEnrollmentPagination">Página 1</span><div><button id="auditEnrollmentPrevious" type="button">Anterior</button><button id="auditEnrollmentNext" type="button">Siguiente</button></div></div>
+          </article>
+
+          <article class="panel audit-events-panel hidden" data-audit-panel="events">
+            <div class="panel-heading audit-panel-heading">
+              <div><h3>Actividad registrada</h3><p>Accesos, activos, respaldos, documentos, expedientes, capacitaciones y actualizaciones.</p></div>
+              <button class="secondary-button compact" id="auditEventExport" type="button">
+                <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-download"></use></svg>
+                Exportar CSV
+              </button>
+            </div>
+            <div class="filter-bar audit-filter-bar audit-event-filters">
+              <label class="search-field"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-search"></use></svg><input id="auditEventSearch" type="search" placeholder="Nombre, cuenta o referencia…" aria-label="Buscar eventos"></label>
+              <select id="auditEventActor" aria-label="Filtrar eventos por usuario"><option value="">Todos los usuarios</option></select>
+              <select id="auditEventModule" aria-label="Filtrar eventos por módulo">
+                <option value="">Todos los módulos</option><option value="ACCESS">Acceso</option><option value="ENROLLMENT">Vinculación</option><option value="ASSETS">Activos</option><option value="SOFTWARE">Software</option><option value="AGENCIES">Agencias</option><option value="NAS">NAS</option><option value="NETWORK">Redes</option><option value="BACKUPS">Respaldos</option><option value="RELEASES">Actualizaciones</option><option value="CASES">Expedientes</option><option value="TRAINING">Capacitaciones</option><option value="GOVERNANCE">Gobierno documental</option><option value="AUDIT">Auditoría</option><option value="REPORTS">Reportes</option><option value="CONFIGURATION">Configuración</option><option value="OTHER">Otros</option>
+              </select>
+              <select id="auditEventOutcome" aria-label="Filtrar eventos por resultado"><option value="">Todos los resultados</option><option value="SUCCEEDED">Acción completada</option><option value="FAILED">Rechazado o fallido</option><option value="REQUESTED">Solicitado</option><option value="WARNING">Con observaciones</option><option value="UNKNOWN">Sin resultado determinado</option></select>
+              <select id="auditEventPeriod" aria-label="Filtrar eventos por periodo"><option value="24H">24 horas</option><option value="7D">7 días</option><option value="30D" selected>30 días</option><option value="90D">90 días</option><option value="365D">1 año</option><option value="ALL">Todo el histórico</option></select>
+            </div>
+            <div class="audit-date-bar"><label>Desde<input type="date" data-audit-date="from" data-audit-kind="events"></label><label>Hasta<input type="date" data-audit-date="to" data-audit-kind="events"></label><button type="button" class="secondary-button compact" data-audit-dates="events">Aplicar fechas</button><button type="button" class="secondary-button compact" data-audit-clear="events">Limpiar filtros</button><small>Fechas en la zona horaria de este navegador.</small></div><p id="auditTargetFilter" class="form-note hidden"></p><div class="table-wrap">
+              <table class="audit-event-table data-table"><thead><tr><th>Fecha</th><th>Módulo</th><th>Acción</th><th>Usuario</th><th>Objeto</th><th>Resultado</th><th></th></tr></thead><tbody id="auditEventRows"><tr class="empty-row"><td colspan="7">Consultando eventos…</td></tr></tbody></table>
+            </div>
+            <div class="pagination"><span id="auditEventPagination">Página 1</span><div><button id="auditEventPrevious" type="button">Anterior</button><button id="auditEventNext" type="button">Siguiente</button></div></div>
+          </article>
+
+          <article class="panel audit-report-panel hidden" data-audit-panel="reports">
+ <div class="panel-heading"><div><h3>Informes de auditoría</h3><p>Utilizan los filtros seleccionados en Vinculaciones y Actividad. Cada exportación queda registrada con su huella SHA-256.</p></div></div>
+ <div class="audit-report-grid"><section><h4>Vinculación de activos</h4><p data-audit-report-scope="enrollments"></p><button type="button" class="secondary-button compact" data-audit-tab="enrollments">Revisar filtros</button><div class="audit-report-actions"><button type="button" class="primary-button" data-audit-report="enrollments" data-format="html">Descargar informe</button><button type="button" class="secondary-button" data-audit-report="enrollments" data-format="csv">Exportar CSV</button></div></section><section><h4>Actividad registrada</h4><p data-audit-report-scope="events"></p><button type="button" class="secondary-button compact" data-audit-tab="events">Revisar filtros</button><div class="audit-report-actions"><button type="button" class="primary-button" data-audit-report="events" data-format="html">Descargar informe</button><button type="button" class="secondary-button" data-audit-report="events" data-format="csv">Exportar CSV</button></div></section></div>
+ <p class="form-note">El informe se abre en el navegador y permite imprimir o guardar como PDF. El CSV incluye una cabecera con fecha, emisor y filtros. Máximo 10,000 registros por exportación; si lo superas, acota la consulta.</p>
+</article><div class="modal-overlay hidden" id="auditDetailOverlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="auditDetailTitle">
+            <article class="modal-card audit-detail-card">
+              <div class="panel-heading"><div><p class="eyebrow" id="auditDetailEyebrow">EVENTO DE AUDITORÍA</p><h3 id="auditDetailTitle">Detalle</h3></div><button class="icon-button" id="auditDetailClose" type="button" aria-label="Cerrar detalle"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button></div>
+              <div id="auditDetailBody" class="audit-detail-body"></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="view-settings"><div class="section-heading"><div><p class="eyebrow">ADMINISTRACIÓN</p><h2>Configuración de ATLAS</h2><p>Ajustes generales, accesos y diagnóstico del servidor.</p></div></div><div id="settingsWorkspace" class="portal-workspace"></div></section>
+
+        <section class="view" id="view-distribution">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">APROVISIONAMIENTO CONTROLADO</p>
+              <h2>Distribución de ATLAS</h2>
+              <p>Versiones publicadas e instaladores EXE vinculados de un solo uso.</p>
+            </div>
+          </div>
+
+          <div id="updaterWorkspace" hidden></div>
+          <div class="overview-grid">
+            <article class="panel span-three release-workspace" id="releaseWorkspace" data-admin-only data-update-section="publication">
+              <div class="panel-heading release-heading">
+                <div>
+                  <h3>Versiones y despliegues</h3>
+                  <p>Carga paquetes firmados, revisa la biblioteca y administra sus destinos.</p>
+                </div>
+                <div class="release-status-badges">
+                  <span class="release-active-label" id="activeReleaseLabel">Sin versión firmada activa</span>
+                  <button type="button" class="release-state pilot-ring-link" id="pilotRingCount" data-updater-ring="PILOT" aria-controls="updaterWorkspace" title="Consultar los equipos vinculados al anillo piloto">Ver piloto · 0 equipos</button>
+                </div>
+              </div>
+              <div class="updates-workspace-tabs" role="tablist" aria-label="Gestión de versiones y despliegues">
+                <button type="button" role="tab" id="releaseWorkspaceUploadTab" data-update-workspace-tab="upload" aria-controls="releaseWorkspaceUpload" aria-selected="false" tabindex="-1">Cargar versión</button>
+                <button type="button" role="tab" id="releaseWorkspaceLibraryTab" data-update-workspace-tab="library" aria-controls="releaseWorkspaceLibrary" aria-selected="true" tabindex="0">Biblioteca</button>
+                <button type="button" role="tab" id="releaseWorkspaceDeploymentsTab" data-update-workspace-tab="deployments" aria-controls="releaseWorkspaceDeployments" aria-selected="false" tabindex="-1">Despliegues</button>
+              </div>
+              <section id="releaseWorkspaceUpload" data-update-workspace-panel="upload" role="tabpanel" aria-labelledby="releaseWorkspaceUploadTab" hidden>
+                <p class="updates-workspace-note">Selecciona un paquete firmado para cargarlo y verificarlo. La carga no lo activa: revisa la versión y elige su destino desde Biblioteca.</p>
+              <form class="release-upload-form" id="releaseUploadForm">
+                <label class="release-file-picker" for="releaseFile">
+                  <span class="release-file-icon">↑</span>
+                  <span>
+                    <strong id="releaseFileLabel">Seleccionar archivo .atlasrelease</strong>
+                    <small>Firma, manifiesto, tamaños y SHA-256 serán verificados.</small>
+                  </span>
+                  <input
+                    id="releaseFile"
+                    type="file"
+                    accept=".atlasrelease,application/vnd.atlas.release"
+                    required>
+                </label>
+                <button class="primary-button" id="uploadRelease" type="submit">
+                  Cargar y verificar
+                </button>
+              </form>
+              <div class="release-progress hidden" id="releaseProgress">
+                <div>
+                  <span id="releaseProgressLabel">Cargando versión…</span>
+                  <b id="releaseProgressValue">0%</b>
+                </div>
+                <progress id="releaseProgressBar" max="100" value="0"></progress>
+              </div>
+              </section>
+              <section id="releaseWorkspaceLibrary" data-update-workspace-panel="library" role="tabpanel" aria-labelledby="releaseWorkspaceLibraryTab">
+              <div class="deployment-selector">
+                <div>
+                  <strong>Destino de la próxima activación</strong>
+                  <small id="deploymentHint">
+                    PILOTO entrega la versión únicamente a los equipos marcados
+                    para validación.
+                  </small>
+                </div>
+                <label class="field">
+                  <span>Alcance</span>
+                  <select id="deploymentScope">
+                    <option value="PILOT" selected>Anillo PILOTO</option>
+                    <option value="AGENCY">Una agencia</option>
+                    <option value="GENERAL">Todos los equipos</option>
+                  </select>
+                </label>
+                <label class="field hidden" id="deploymentAgencyField">
+                  <span>Agencia</span>
+                  <select id="deploymentAgency">
+                    <option value="">Seleccione una agencia</option>
+                  </select>
+                </label>
+              </div>
+              <div class="release-library-toolbar">
+                <div
+                  class="release-tabs"
+                  role="tablist"
+                  aria-label="Clasificación de versiones de ATLAS">
+                  <button
+                    class="release-tab active"
+                    type="button"
+                    role="tab"
+                    aria-selected="true"
+                    data-release-tab="production">
+                    Producción
+                    <span id="releaseProductionCount">0</span>
+                  </button>
+                  <button
+                    class="release-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-release-tab="testing">
+                    Subidas y pruebas
+                    <span id="releaseTestingCount">0</span>
+                  </button>
+                  <button
+                    class="release-tab"
+                    type="button"
+                    role="tab"
+                    aria-selected="false"
+                    data-release-tab="history">
+                    Histórico
+                    <span id="releaseHistoryCount">0</span>
+                  </button>
+                </div>
+                <p id="releaseTabDescription">
+                  Versión activa que recibe actualmente toda la flota.
+                </p>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Versión</th>
+                      <th>Creada</th>
+                      <th>Componentes</th>
+                      <th>Firma</th>
+                      <th>Estado</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="releaseRows"></tbody>
+                </table>
+              </div>
+              <div class="pagination release-pagination">
+                <span id="releasePaginationLabel">0 versiones</span>
+                <div>
+                  <button id="releasePreviousPage" type="button">Anterior</button>
+                  <button id="releaseNextPage" type="button">Siguiente</button>
+                </div>
+              </div>
+              </section>
+              <section class="controlled-deployments" id="releaseWorkspaceDeployments" data-update-workspace-panel="deployments" role="tabpanel" aria-labelledby="releaseWorkspaceDeploymentsTab" hidden>
+                <p class="updates-workspace-note">Administra los despliegues por destino. Pausar devuelve ese grupo a la versión general sin borrar el paquete firmado.</p>
+                <div class="updates-pilot-tools"><button type="button" class="secondary-button compact" data-updater-ring="PILOT" aria-controls="updaterWorkspace">Ver equipos del anillo piloto</button><span>La pertenencia al anillo se conserva aunque no haya una versión desplegada.</span></div>
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <thead>
+                      <tr>
+                        <th>Destino</th>
+                        <th>Release</th>
+                        <th>Equipos</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="deploymentRows"></tbody>
+                  </table>
+                </div>
+              </section>
+            </article>
+
+            <article class="panel span-three" data-update-section="server-versions">
+              <div class="panel-heading release-heading">
+                <div>
+                  <h3>Versiones de ATLAS Server</h3>
+                  <p>
+                    Funcionalidades, diferencias y alcance de recuperación del
+                    servidor central. Esta vista informa; no ejecuta una restauración.
+                  </p>
+                </div>
+                <span class="release-active-label" id="activeServerReleaseLabel">
+                  Consultando versión activa
+                </span>
+              </div>
+              <div class="server-release-truth">
+                <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-history"></use></svg>
+                <p>
+                  <strong>Dos recuperaciones diferentes:</strong> restaurar solo la
+                  aplicación conserva PostgreSQL; una recuperación completa devuelve
+                  datos y evidencias al instante del respaldo seleccionado.
+                </p>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Versión</th>
+                      <th>Publicada</th>
+                      <th>Aporta</th>
+                      <th>Evidencia local</th>
+                      <th>Estado</th>
+                      <th>Acción</th>
+                    </tr>
+                  </thead>
+                  <tbody id="serverReleaseRows"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="panel span-two" data-update-section="components">
+              <div class="panel-heading">
+                <div>
+                  <h3>Componentes publicados</h3>
+                  <p>El servidor verifica tamaño y SHA-256 antes de distribuirlos.</p>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>Componente</th>
+                      <th>Versión</th>
+                      <th>Tamaño</th>
+                      <th>Integridad</th>
+                    </tr>
+                  </thead>
+                  <tbody id="distributionRows"></tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="panel" data-update-section="installer">
+              <div class="panel-heading">
+                <div>
+                  <h3>Nuevo instalador</h3>
+                  <p>La credencial se invalida al vincular el primer equipo.</p>
+                </div>
+              </div>
+              <form class="provision-form" id="installerForm">
+                <label class="field">
+                  <span>Agencia</span>
+                  <select id="installerAgency" required>
+                    <option value="">Seleccione una agencia</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Vigencia</span>
+                  <select id="installerLifetime">
+                    <option value="8">8 horas</option>
+                    <option value="24" selected>24 horas</option>
+                    <option value="48">48 horas</option>
+                  </select>
+                </label>
+                <button class="primary-button" id="generateInstaller" type="submit">
+                  Generar instalador EXE
+                </button>
+              </form>
+              <p class="truth-note">
+                Los instaladores nuevos usarán únicamente la versión firmada
+                que figure como activa.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="drawer-backdrop hidden" id="drawerBackdrop"></div>
+  <aside class="detail-drawer" id="deviceDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="drawerTitle" aria-describedby="drawerSubtitle">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow">DETALLE DEL ACTIVO</span>
+        <h2 id="drawerTitle">Equipo</h2>
+        <p id="drawerSubtitle">Agencia</p>
+      </div>
+      <button class="icon-button" id="closeDrawer" aria-label="Cerrar"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+    </div>
+    <div class="drawer-content" id="drawerContent"></div>
+  </aside>
+
+  <div class="release-detail-overlay hidden" id="releaseDetailOverlay" aria-hidden="true">
+    <aside class="release-detail-dialog" role="dialog" aria-modal="true" aria-labelledby="releaseDetailTitle">
+      <div class="release-detail-header">
+        <div>
+          <span class="eyebrow" id="releaseDetailEyebrow">DETALLE DE LA VERSIÓN</span>
+          <h2 id="releaseDetailTitle">Versión</h2>
+          <p id="releaseDetailSubtitle">Comparación y recuperación</p>
+        </div>
+        <button class="icon-button" id="releaseDetailClose" type="button" aria-label="Cerrar detalle"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+      </div>
+      <div class="release-detail-content" id="releaseDetailContent"></div>
+    </aside>
+  </div>
+
+  <div class="governance-preview-overlay hidden" id="governancePreviewOverlay"
+       aria-hidden="true">
+    <section class="governance-preview-dialog" role="dialog" aria-modal="true"
+             aria-labelledby="governancePreviewTitle">
+      <header class="governance-preview-header">
+        <div class="governance-preview-heading">
+          <span class="eyebrow">VISOR DOCUMENTAL · SÓLO LECTURA</span>
+          <h2 id="governancePreviewTitle">Vista previa</h2>
+          <p id="governancePreviewMeta">El documento original permanece intacto.</p>
+        </div>
+        <div class="governance-preview-actions">
+          <a class="secondary-button compact" id="governancePreviewDownload"
+             href="#"> <svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-download"></use></svg>Descargar original</a>
+          <button class="icon-button" id="governancePreviewClose" type="button"
+                  aria-label="Cerrar vista previa"><svg class="atlas-icon" aria-hidden="true"><use href="/assets/vendor/tabler/tabler-icons.svg#ti-x"></use></svg></button>
+        </div>
+      </header>
+      <div class="governance-preview-notice" id="governancePreviewNotice">
+        Preparando una vista segura del documento…
+      </div>
+      <div class="governance-preview-tabs hidden" id="governancePreviewTabs"
+           role="tablist" aria-label="Hojas del libro"></div>
+      <div class="governance-preview-body" id="governancePreviewBody"></div>
+    </section>
+  </div>
+
+  <div class="attention-toast-stack" id="attentionToastStack"
+       aria-live="polite" aria-label="Avisos de atención"></div>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="/assets/asset-custody.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/asset-custody-bulk.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/nas-lifecycle.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/dashboard.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/backup-demonstrations.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/acronis-imports.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/backup-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/backup-schedules.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/network-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/network-scanner.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/updater-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/update-sections.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/software-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/vulnerability-presentation.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/vulnerability-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/operational-settings.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/agent-policy-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/portal-workspace.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/operational-coherence.js?v=0.9.50-u.2" defer></script>
+  <script src="/assets/mineral-motion.js?v=0.9.50-u.2" defer></script>
+</body>
+</html>

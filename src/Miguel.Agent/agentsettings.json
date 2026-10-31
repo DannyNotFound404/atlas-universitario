@@ -1,0 +1,26 @@
+{
+  "Agent": {
+    "HeartbeatInterval": "00:05:00",
+    "InventoryInterval": "1.00:00:00",
+    "SecurityPostureInterval": "06:00:00",
+    "SecurityEventInterval": "00:05:00",
+    "SecurityEventInitialLookback": "00:15:00",
+    "SecurityEventBatchSize": 250,
+    "BackupClientVersion": "5.13.0-u.1",
+    "HttpTimeout": "00:00:30",
+    "RunOnce": false
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.Hosting.Lifetime": "Information"
+    },
+    "EventLog": {
+      "LogLevel": {
+        "Default": "Warning",
+        "Miguel.Agent": "Information",
+        "Microsoft.Hosting.Lifetime": "Information"
+      }
+    }
+  }
+}

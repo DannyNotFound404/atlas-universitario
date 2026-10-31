@@ -1,0 +1,21 @@
+.nas-lifecycle-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px;padding:5px;background:var(--surface-soft,var(--surface-soft));border-radius:14px;width:fit-content}
+.nas-lifecycle-tabs button{border:0;background:transparent;border-radius:10px;padding:10px 18px;font:inherit;font-weight:700;color:var(--text-muted,var(--muted));cursor:pointer}
+.nas-lifecycle-tabs button[aria-selected=true]{background:var(--surface,var(--surface));color:var(--text,var(--ink));box-shadow:0 2px 7px rgb(var(--shadow-rgb) / 0.0705882)}
+.nas-lifecycle-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;grid-column:1/-1;margin-top:5px}
+.nas-lifecycle-action{font:inherit;min-height:40px}
+.nas-status.retired,.status-retired{color:var(--muted);background:var(--surface-soft);border-radius:9px;padding:7px 12px;font-size:12px;font-weight:700}
+.atlas-nas-appliance.is-retired{border-color:var(--line)}.atlas-nas-appliance.is-retired .atlas-nas-appliance-header{background:var(--surface-soft,var(--surface-soft))}
+.atlas-nas-appliance-summary>div:not(.atlas-nas-capacity-bar){display:flex;gap:8px;flex-wrap:wrap}
+.nas-retirement-note{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--muted,var(--muted));line-height:1.6;margin:14px 0}
+.nas-lifecycle-dialog{box-sizing:border-box;border:1px solid var(--line,var(--line));border-radius:22px;padding:0;width:min(720px,calc(100vw - 28px));max-height:calc(100dvh - 36px);color:var(--text,var(--ink));background:var(--surface,var(--surface));box-shadow:0 25px 90px rgb(var(--shadow-rgb) / 0.25098)}
+.nas-lifecycle-dialog::backdrop{background:var(--backdrop);backdrop-filter:blur(3px)}
+.nas-lifecycle-dialog form{margin:0}.nas-lifecycle-dialog header,.nas-lifecycle-dialog footer{padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line,var(--line))}
+.nas-lifecycle-dialog h2{font-size:22px;margin:5px 0}.nas-lifecycle-dialog footer{justify-content:flex-end;border:0;border-top:1px solid var(--line,var(--line))}
+.nas-lifecycle-body{padding:6px 24px 22px;line-height:1.6}.nas-lifecycle-body p{overflow-wrap:anywhere}.nas-lifecycle-resources{padding:0;list-style:none;max-height:200px;overflow:auto;border:1px solid var(--line,var(--line));border-radius:12px}
+.nas-lifecycle-resources:empty{display:none}.nas-lifecycle-resources li{padding:12px 16px;border-bottom:1px solid var(--line,var(--line));display:flex;flex-direction:column;overflow-wrap:anywhere}.nas-lifecycle-resources li:last-child{border:0}.nas-lifecycle-resources span{color:var(--muted,var(--muted));font-size:13px}
+.nas-lifecycle-reason{display:flex;flex-direction:column;gap:7px;font-weight:700}.nas-lifecycle-reason textarea{box-sizing:border-box;width:100%;border:1px solid var(--line,var(--line));border-radius:12px;padding:12px 14px;resize:vertical;font:inherit;font-weight:400;color:inherit;background:var(--surface-soft,var(--surface))}
+.nas-lifecycle-reason textarea:focus{outline:2px solid var(--accent);outline-offset:2px}.nas-lifecycle-blocked{padding:15px;background:var(--surface-soft,var(--amber-soft));border-left:4px solid var(--amber);border-radius:10px;margin:16px 0}.nas-lifecycle-blocked ul{max-height:200px;overflow:auto;overflow-wrap:anywhere}
+.nas-lifecycle-reason[hidden]{display:none}.nas-lifecycle-help{font-size:13px;color:var(--muted,var(--muted))}
+.nas-lifecycle-blocked li{margin:12px 0}.nas-lifecycle-blocked li span{display:block;margin-top:4px;font-size:13px}
+.nas-lifecycle-dialog button:disabled{background:var(--surface-soft);color:var(--muted);border:1px solid var(--line);box-shadow:none;opacity:1;cursor:not-allowed;transform:none}
+@media(max-width:560px){.nas-lifecycle-dialog header,.nas-lifecycle-dialog footer{padding:16px;flex-wrap:wrap}.nas-lifecycle-body{padding:4px 16px 18px}.nas-lifecycle-dialog h2{font-size:20px}.nas-lifecycle-actions{justify-content:stretch}.nas-lifecycle-actions button{flex:1}.nas-lifecycle-tabs button{padding:10px 12px}}

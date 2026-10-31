@@ -1,0 +1,7 @@
+# Preserve the delivered bytes and SHA-256 evidence across clones.
+# Source files may have LF or CRLF; Git must not rewrite this baseline.
+* -text
+* whitespace=cr-at-eol
+*.ico binary
+*.png binary
+*.jpg binary

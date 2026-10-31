@@ -1,0 +1,124 @@
+/* ATLAS Mineral. Component styles consume semantic tokens in both appearances. */
+:root {
+  color-scheme: light;
+  --canvas: #e7eeea;
+  --surface: #fcfdfb;
+  --surface-soft: #f0f5ee;
+  --surface-raised: #dfe9df;
+  --ink: #203c31;
+  --muted: #506858;
+  --line: #cbdacf;
+  --line-strong: #a6b9ac;
+  --accent: #216640;
+  --accent-hover: #194e31;
+  --accent-secondary: #547b6c;
+  --accent-soft: #e5efdb;
+  --on-accent: #ffffff;
+  --sidebar: #294a3e;
+  --side-ink: #f1f7ed;
+  --side-muted: #c1d2be;
+  --side-line: #416653;
+  --side-active: #41664c;
+  --side-accent: #d7edaa;
+  --green: #216640;
+  --green-soft: #e4efdc;
+  --copy-sage: #32735b;
+  --copy-sage-soft: #e4f0e9;
+  --amber: #89561d;
+  --amber-soft: #faf0dc;
+  --orange: #934210;
+  --orange-soft: #ffeadf;
+  --red: #a43c4b;
+  --red-soft: #fbecef;
+  --danger-fill: #a43c4b;
+  --on-danger: #ffffff;
+  --info: #285b88;
+  --info-soft: #e6eff8;
+  --violet: #62438c;
+  --violet-soft: #f0eafa;
+  --chart-neutral: #7d9184;
+  --chart-warning: #c18a36;
+  --grid: #41665320;
+  --shadow: 0 6px 20px #264a3108;
+  --shadow-rgb: 28 42 34;
+  --backdrop: #12251dcc;
+  --radius: 13px;
+  --radius-small: 10px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #31373d;
+  --surface: #3e474f;
+  --surface-soft: #354048;
+  --surface-raised: #52606a;
+  --ink: #f7faf8;
+  --muted: #e1e8ed;
+  --line: #62727d;
+  --line-strong: #81959f;
+  --accent: #b5f074;
+  --accent-hover: #c5f692;
+  --accent-secondary: #6fe2c6;
+  --accent-soft: #426545;
+  --on-accent: #203720;
+  --sidebar: #365847;
+  --side-ink: #f3f7f4;
+  --side-muted: #d0e4d6;
+  --side-line: #6b917c;
+  --side-active: #3f6b4e;
+  --side-accent: #b5f074;
+  --green: #b0f08a;
+  --green-soft: #366341;
+  --copy-sage: #a6d9bd;
+  --copy-sage-soft: #304b40;
+  --amber: #ffd37a;
+  --amber-soft: #6c5427;
+  --orange: #ffd0a3;
+  --orange-soft: #774722;
+  --red: #ffc2c8;
+  --red-soft: #82484b;
+  --danger-fill: #ffc2c8;
+  --on-danger: #492127;
+  --info: #b9ddff;
+  --info-soft: #354e6b;
+  --violet: #dfccff;
+  --violet-soft: #574575;
+  --chart-neutral: #a1b5bc;
+  --chart-warning: #ffd37a;
+  --grid: #b5f0741b;
+  --shadow: 0 5px 20px #18231d24;
+  --shadow-rgb: 17 25 22;
+  --backdrop: #101a15cc;
+}
+
+/* Compatibility names shared by the existing modules; never encode a theme here. */
+:root {
+  --navy: var(--ink);
+  --navy-2: var(--accent-secondary);
+  --teal: var(--accent);
+  --teal-dark: var(--accent);
+  --teal-soft: var(--accent-soft);
+  --cyan: var(--accent-secondary);
+  --text: var(--ink);
+  --text-muted: var(--muted);
+  --shadow-soft: var(--shadow);
+}
+
+@media print {
+  :root, :root[data-theme="dark"] {
+    color-scheme: light;
+    --canvas: #ffffff; --surface: #ffffff; --surface-soft: #f0f5ee;
+    --surface-raised: #dfe9df; --ink: #203c31; --muted: #506858;
+    --line: #cbdacf; --line-strong: #a6b9ac;
+    --accent: #216640; --accent-hover: #194e31; --accent-secondary: #547b6c;
+    --accent-soft: #e5efdb; --on-accent: #ffffff;
+    --green: #216640; --green-soft: #e4efdc;
+    --copy-sage: #32735b; --copy-sage-soft: #e4f0e9;
+    --amber: #89561d; --amber-soft: #faf0dc;
+    --orange: #934210; --orange-soft: #ffeadf;
+    --red: #a43c4b; --red-soft: #fbecef; --danger-fill: #a43c4b; --on-danger: #ffffff;
+    --info: #285b88; --info-soft: #e6eff8; --violet: #62438c; --violet-soft: #f0eafa;
+    --chart-neutral: #7d9184; --chart-warning: #c18a36; --grid: transparent;
+    --shadow: none;
+  }
+}

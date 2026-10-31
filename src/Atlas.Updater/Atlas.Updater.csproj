@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishTrimmed>false</PublishTrimmed>
+    <AssemblyName>ATLAS.Updater</AssemblyName>
+    <RootNamespace>Atlas.Updater</RootNamespace>
+    <VersionPrefix>0.4.0</VersionPrefix>
+    <VersionSuffix>rc.1</VersionSuffix>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Miguel.Contracts\Miguel.Contracts.csproj" />
+  </ItemGroup>
+</Project>
